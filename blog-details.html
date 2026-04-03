@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article | SolarWave Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo"><i data-lucide="sun"></i> Solar<span>Wave</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="login.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Login</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="dark-mode-toggle" class="toggle-btn"><i data-lucide="moon"></i></button>
+        <button id="rtl-toggle" class="toggle-btn"><i data-lucide="languages"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <article class="section-padding" style="padding-top: 10rem;">
+    <div class="container" style="max-width: 800px;">
+      <p style="font-size: 0.9rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">TECH NEWS | MARCH 2026</p>
+      <h1 style="font-size: 3rem; line-height: 1.2; margin-bottom: 2rem;">Top 5 Solar Panel Technologies to Watch in 2026</h1>
+      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200" alt="Solar Tech" style="width: 100%; border-radius: 1.5rem; margin-bottom: 3rem;">
+      
+      <div style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
+        <p style="margin-bottom: 1.5rem;">The solar energy industry is evolving at an unprecedented pace. What was considered cutting-edge just two years ago is now becoming mainstream. As we move further into 2026, several new technologies are emerging that promise even higher efficiency and lower costs for residential installations.</p>
+        <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Perovskite Cells</h2>
+        <p style="margin-bottom: 1.5rem;">Perovskite solar cells (PSCs) are the rising stars of the photovoltaic world. Unlike traditional silicon-based cells, perovskites are cheaper to manufacture and can be tuned to absorb different parts of the solar spectrum.</p>
+        <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Bifacial Solar Panels</h2>
+        <p style="margin-bottom: 1.5rem;">Bifacial panels capture sunlight from both the front and the back side. When installed on reflective rooftops, they can increase total energy production by up to 20% compared to traditional monofacial panels.</p>
+      </div>
+    </div>
+  </article>
+
+  <section class="section-padding" style="background-color: var(--surface);">
+    <div class="container" style="max-width: 800px;">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Add a <span>Comment</span></h2>
+      <form style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="flex" style="gap: 1rem;">
+            <input type="text" placeholder="Your Name" style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); flex: 1; background: var(--background);">
+            <input type="email" placeholder="Your Email" style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); flex: 1; background: var(--background);">
+        </div>
+        <textarea placeholder="Write your message here..." style="padding: 1rem; min-height: 150px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);"></textarea>
+        <button class="btn btn-primary" style="align-self: flex-start; padding: 1rem 2.5rem;">Post Comment</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container text-center">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Related <span>Articles</span></h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card" style="text-align: left;">
+            <img src="https://images.unsplash.com/photo-1559302995-f09f53509930?auto=format&fit=crop&q=80&w=400" alt="Related" class="card-img" style="height: 150px;">
+            <h3>Understanding Net Metering</h3>
+        </div>
+        <div class="card" style="text-align: left;">
+            <img src="https://images.unsplash.com/photo-1548613053-220038833894?auto=format&fit=crop&q=80&w=400" alt="Related" class="card-img" style="height: 150px;">
+            <h3>Solar Batteries vs. Generators</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container text-center"><p>&copy; 2026 SolarWave. All rights reserved.</p></div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
