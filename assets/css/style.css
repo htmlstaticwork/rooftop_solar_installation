@@ -32,10 +32,22 @@
 [data-theme="dark"] {
   --background: #0F172A;
   --surface: #1E293B;
-  --text-main: #F1F5F9;
+  --text-main: #FFFFFF;
   --text-muted: #94A3B8;
   --border: #334155;
   --white: #FFFFFF;
+}
+
+[data-theme="dark"] .header .btn-outline {
+  background-color: var(--white);
+  color: #000000 !important;
+  border-color: var(--white);
+}
+
+[data-theme="dark"] .header .btn-outline:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #000000 !important;
 }
 
 /* RTL Support */
@@ -121,11 +133,83 @@ textarea {
   gap: 1rem;
 }
 
+.premium-services-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .premium-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.leadership-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.solar-potential-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.solar-potential-grid .card {
+  width: 100%;
+  max-width: 480px;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .solar-potential-grid .card {
+    flex-basis: 100%;
+  }
+}
+
+.installation-process-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.installation-process-grid .card:last-child {
+  grid-column: span 2;
+  justify-self: center;
+  max-width: 580px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .installation-process-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .installation-process-grid .card:last-child {
+    grid-column: span 1;
+    max-width: 100%;
+  }
+}
+
 .text-center {
   text-align: center;
 }
 
-/* --- Components --- */
+/* Links */
+.hover-link {
+  transition: var(--transition);
+  display: inline-block;
+}
+
+.hover-link:hover {
+  color: var(--primary-dark) !important;
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
 
 /* Buttons */
 .btn {
@@ -180,12 +264,10 @@ textarea {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #FFFFFF !important;
-  /* Always solid white background */
+  background-color: var(--background);
   z-index: 1000;
   border-bottom: 1px solid var(--border);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  /* Added subtle shadow for depth */
   transition: var(--transition);
 }
 
@@ -203,8 +285,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #1E293B !important;
-  /* Ensure dark, readable color for logo name */
+  color: var(--text-main);
 }
 
 .logo span {
@@ -219,8 +300,7 @@ textarea {
 
 .nav-link {
   font-weight: 500;
-  color: #475569 !important;
-  /* Ensure dark, readable color on white background */
+  color: var(--text-muted);
 }
 
 .nav-link:hover,
@@ -237,8 +317,7 @@ textarea {
 .toggle-btn {
   background: none;
   border: none;
-  color: #1E293B !important;
-  /* Ensure toggle icons are dark on white background */
+  color: var(--text-main);
   cursor: pointer;
   width: 32px;
   height: 32px;
@@ -283,16 +362,24 @@ textarea {
 }
 
 .footer-logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  display: flex;
+  font-family: 'Outfit', sans-serif;
+  color: var(--white) !important;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.footer-logo i,
+.footer-logo svg {
+  color: var(--primary) !important;
 }
 
 .footer-logo span {
-  color: var(--primary);
+  color: var(--primary) !important;
 }
 
 .footer-text {
@@ -320,6 +407,20 @@ textarea {
   padding-left: 5px;
 }
 
+.contact-item {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-item i {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
 .social-links {
   display: flex;
   gap: 1rem;
@@ -333,12 +434,33 @@ textarea {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: var(--transition);
+  color: #f1f5f9;
+  /* Default light gray */
+  font-size: 18px;
+  /* Icon size 16px-20px */
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .social-link:hover {
-  background-color: var(--primary);
-  color: var(--secondary);
+  transform: scale(1.15);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-link[aria-label="Instagram"]:hover {
+  color: #E1306C;
+}
+
+.social-link[aria-label="Facebook"]:hover {
+  color: #1877F2;
+}
+
+.social-link[aria-label="X"]:hover {
+  color: #ffffff;
+}
+
+.social-link[aria-label="YouTube"]:hover {
+  color: #FF0000;
 }
 
 .footer-bottom {
@@ -546,8 +668,11 @@ textarea {
   display: flex;
   flex-direction: column;
   position: fixed;
+  inset-inline-start: 0;
+  top: 0;
   height: 100vh;
   width: 280px;
+  z-index: 100;
 }
 
 .sidebar-logo {
@@ -560,13 +685,32 @@ textarea {
 }
 
 .dashboard-main {
-  margin-left: 280px;
+  margin-inline-start: 280px;
   background-color: #F1F5F9;
-  padding: 2rem;
+  padding: 2rem 3rem;
+  transition: var(--transition);
 }
 
 [data-theme="dark"] .dashboard-main {
-  background-color: #111827;
+  background-color: #0F172A;
+}
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dash-card {
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 1.5rem !important;
+}
+
+[dir="rtl"] .dash-card {
+  align-items: flex-end !important;
+  text-align: right !important;
 }
 
 .sidebar-nav {

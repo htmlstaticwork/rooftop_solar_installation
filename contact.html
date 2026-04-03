@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
 
-<head>
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | SolarWave Installation</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo"><i data-lucide="sun"></i> Solar<span>Wave</span></a>
+      <a href="index.html" class="logo">
+        <i data-lucide="sun" style="color: var(--primary);"></i>
+        Solar<span>Wave</span>
+      </a>
+
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="home-2.html" class="nav-link">Home 2</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
+
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn"><i data-lucide="moon"></i></button>
-        <button id="rtl-toggle" class="toggle-btn"><i data-lucide="languages"></i></button>
-        <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+          <i data-lucide="languages"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
@@ -120,7 +138,7 @@
     <div class="container text-center">
       <h2 style="margin-bottom: 3rem;">Our Specialized <span style="color: var(--primary);">Departments</span></h2>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-        <div class="card" style="padding: 3rem 2rem; align-items: flex-start; text-align: left;">
+        <div class="card" style="padding: 3rem 2rem;">
           <div
             style="background: rgba(250, 204, 21, 0.1); width: 60px; height: 60px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--primary);">
             <i data-lucide="phone-forwarded"></i>
@@ -131,7 +149,7 @@
           <a href="#" style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">Contact
             Sales <i data-lucide="chevron-right" style="width: 18px;"></i></a>
         </div>
-        <div class="card" style="padding: 3rem 2rem; align-items: flex-start; text-align: left;">
+        <div class="card" style="padding: 3rem 2rem;">
           <div
             style="background: rgba(250, 204, 21, 0.1); width: 60px; height: 60px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--primary);">
             <i data-lucide="settings"></i>
@@ -142,7 +160,7 @@
           <a href="#" style="color: var(--primary); font-weight: 600; display: flex; align-items: center; gap: 0.5rem;">Get
             Support <i data-lucide="chevron-right" style="width: 18px;"></i></a>
         </div>
-        <div class="card" style="padding: 3rem 2rem; align-items: flex-start; text-align: left;">
+        <div class="card" style="padding: 3rem 2rem;">
           <div
             style="background: rgba(250, 204, 21, 0.1); width: 60px; height: 60px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--primary);">
             <i data-lucide="users"></i>
@@ -176,8 +194,53 @@
   </section>
 
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 SolarWave. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="sun" style="color: var(--primary);"></i> Solar <span>Wave</span>
+          </a>
+          <p class="footer-text">Leading the transition to sustainable energy with premium residential solar solutions.
+            Excellence in every installation.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="dashboard.html">User Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Info</h4>
+          <ul>
+            <li class="contact-item"><i data-lucide="map-pin" size="16"></i> 123 Solar Street, CA 90210</li>
+            <li class="contact-item"><i data-lucide="phone" size="16"></i> +1 (555) 123-4567</li>
+            <li class="contact-item"><i data-lucide="mail" size="16"></i> info@solarwave.com</li>
+            <li class="contact-item"><i data-lucide="clock" size="16"></i> Mon - Sat: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SolarWave Installation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
@@ -185,3 +248,4 @@
 </body>
 
 </html>
+

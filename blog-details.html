@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
 
-<head>
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Article | SolarWave Blog</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
   <header class="header">
     <div class="container nav">
-      <a href="index.html" class="logo"><i data-lucide="sun"></i> Solar<span>Wave</span></a>
+      <a href="index.html" class="logo">
+        <i data-lucide="sun" style="color: var(--primary);"></i>
+        Solar<span>Wave</span>
+      </a>
+
       <ul class="nav-links" id="nav-links">
         <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="home-2.html" class="nav-link">Home 2</a></li>
         <li><a href="about.html" class="nav-link">About</a></li>
         <li><a href="services.html" class="nav-link">Services</a></li>
         <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
-        <li><a href="login.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Login</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
+        <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
+
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn"><i data-lucide="moon"></i></button>
-        <button id="rtl-toggle" class="toggle-btn"><i data-lucide="languages"></i></button>
+        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+          <i data-lucide="languages"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
   </header>
 
   <article class="section-padding" style="padding-top: 10rem;">
     <div class="container" style="max-width: 800px;">
-      <p style="font-size: 0.9rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">TECH NEWS | MARCH 2026
+      <p id="post-category" style="font-size: 0.9rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">TECH NEWS | MARCH 2026
       </p>
-      <h1 style="font-size: 3rem; line-height: 1.2; margin-bottom: 2rem;">Top 5 Solar Panel Technologies to Watch in
+      <h1 id="post-title" style="font-size: 3rem; line-height: 1.2; margin-bottom: 2rem;">Top 5 Solar Panel Technologies to Watch in
         2026</h1>
-      <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1200"
+      <img id="post-image" src="assets/images/Top 5 Solar.png"
         alt="Solar Tech" style="width: 100%; border-radius: 1.5rem; margin-bottom: 3rem;">
 
-      <div style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
+      <div id="post-content" style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
         <p style="margin-bottom: 1.5rem;">The solar energy industry is evolving at an unprecedented pace. What was
           considered cutting-edge just two years ago is now becoming mainstream. As we move further into 2026, several
           new technologies are emerging that promise even higher efficiency and lower costs for residential
@@ -76,27 +97,148 @@
     <div class="container text-center">
       <h2 style="font-size: 2rem; margin-bottom: 2rem;">Related <span>Articles</span></h2>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
-        <div class="card" style="text-align: left;">
-          <img src="https://images.unsplash.com/photo-1559302995-f09f53509930?auto=format&fit=crop&q=80&w=400"
+        <a href="blog-details.html?post=net-metering" class="card" style="text-align: left; text-decoration: none;">
+          <img src="assets/images/How to Sell Back Energy.png"
             alt="Related" class="card-img" style="height: 150px;">
-          <h3>Understanding Net Metering</h3>
-        </div>
-        <div class="card" style="text-align: left;">
-          <img src="https://images.unsplash.com/photo-1548613053-220038833894?auto=format&fit=crop&q=80&w=400"
+          <h3 style="margin-top: 1rem; font-size: 1.1rem;">Understanding Net Metering</h3>
+        </a>
+        <a href="blog-details.html?post=batteries-vs-generators" class="card" style="text-align: left; text-decoration: none;">
+          <img src="assets/images/Solar Batteries vs. Generators.png"
             alt="Related" class="card-img" style="height: 150px;">
-          <h3>Solar Batteries vs. Generators</h3>
-        </div>
+          <h3 style="margin-top: 1rem; font-size: 1.1rem;">Solar Batteries vs. Generators</h3>
+        </a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container text-center">
-      <p>&copy; 2026 SolarWave. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="sun" style="color: var(--primary);"></i> Solar<span>Wave</span>
+          </a>
+          <p class="footer-text">Leading the transition to sustainable energy with premium residential solar solutions.
+            Excellence in every installation.</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="blog.html">Latest News</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing Plans</a></li>
+            <li><a href="dashboard.html">User Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact Info</h4>
+          <ul>
+            <li class="contact-item"><i data-lucide="map-pin" size="16"></i> 123 Solar Street, CA 90210</li>
+            <li class="contact-item"><i data-lucide="phone" size="16"></i> +1 (555) 123-4567</li>
+            <li class="contact-item"><i data-lucide="mail" size="16"></i> info@solarwave.com</li>
+            <li class="contact-item"><i data-lucide="clock" size="16"></i> Mon - Sat: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SolarWave Installation. All rights reserved.</p>
+      </div>
     </div>
   </footer>
   <script src="assets/js/main.js"></script>
-  <script>lucide.createIcons();</script>
+  <script>
+    const postsData = {
+      'top-5-tech': {
+        category: 'TECH NEWS | MARCH 2026',
+        title: 'Top 5 Solar Panel Technologies to Watch in 2026',
+        image: 'assets/images/Top 5 Solar.png',
+        content: `
+          <p style="margin-bottom: 1.5rem;">The solar energy industry is evolving at an unprecedented pace. What was considered cutting-edge just two years ago is now becoming mainstream. As we move further into 2026, several new technologies are emerging that promise even higher efficiency and lower costs for residential installations.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Perovskite Cells</h2>
+          <p style="margin-bottom: 1.5rem;">Perovskite solar cells (PSCs) are the rising stars of the photovoltaic world. Unlike traditional silicon-based cells, perovskites are cheaper to manufacture and can be tuned to absorb different parts of the solar spectrum.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Bifacial Solar Panels</h2>
+          <p style="margin-bottom: 1.5rem;">Bifacial panels capture sunlight from both the front and the back side. When installed on reflective rooftops, they can increase total energy production by up to 20% compared to traditional monofacial panels.</p>
+        `
+      },
+      'winter-efficiency': {
+        category: 'TIPS | FEB 2026',
+        title: 'How to Maximize Your Solar Efficiency During Winter',
+        image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=1200',
+        content: `
+          <p style="margin-bottom: 1.5rem;">One of the most common myths about solar energy is that panels stop working during the winter. While it's true that the days are shorter and the sun sits lower in the sky, solar panels are actually more efficient in cold temperatures. However, snow and shorter daylight hours can present challenges.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Keep Panels Free of Snow</h2>
+          <p style="margin-bottom: 1.5rem;">While a light dusting of snow will usually melt away on its own due to the heat generated by the cells, a heavy accumulation can block sunlight entirely. Use a soft-bristled roof rake to gently remove snow if it's safe to do so.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Adjust the Tilt Angle</h2>
+          <p style="margin-bottom: 1.5rem;">The sun sits lower in the sky during the winter months. If your mounting system allows for it, adjusting the tilt angle of your panels more vertically (closer to 45-60 degrees) will help capture more direct sunlight.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">3. Monitor Performance Regularly</h2>
+          <p style="margin-bottom: 1.5rem;">Use your SolarWave monitoring app to keep an eye on your daily production. Sudden drops might indicate a specific panel is covered in snow or obscured by winter debris.</p>
+        `
+      },
+      'net-metering': {
+        category: 'SAVINGS | JAN 2026',
+        title: 'Understanding Net Metering: How to Sell Back Energy',
+        image: 'assets/images/How to Sell Back Energy.png',
+        content: `
+          <p style="margin-bottom: 1.5rem;">Net metering allows residential and commercial solar owners who generate their own electricity to feed information back to the grid and receive credit on their utility bills. It's one of the best financial incentives for going solar.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Feeding Back to the Grid</h2>
+          <p style="margin-bottom: 1.5rem;">During the sunny part of the day, your system will likely produce more than you need. That surplus goes to your neighbors, and your utility companies credit you for every kilowatt-hour. In essence, the grid acts as a massive energy storage system for you.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Offsetting Nighttime Usage</h2>
+          <p style="margin-bottom: 1.5rem;">When the sun goes down, you'll pull energy from the grid as usual. The credits you earned during the day will directly offset this usage, often bringing your net monthly bill down to near zero.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">3. Long-term ROI Impact</h2>
+          <p style="margin-bottom: 1.5rem;">Net metering can shorten your solar payback period by several years. Policies vary by utility, so always verify the current rates and surplus rollover terms with your provider.</p>
+        `
+      },
+      'batteries-vs-generators': {
+        category: 'GUIDE | DEC 2025',
+        title: 'Solar Batteries vs. Generators: Which is Better?',
+        image: 'assets/images/Solar Batteries vs. Generators.png',
+        content: `
+          <p style="margin-bottom: 1.5rem;">When it comes to home backup power, you generally have two main choices: a traditional gas-powered generator or a modern solar battery like the LG Resu or Tesla Powerwall.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Maintenance and Noise</h2>
+          <p style="margin-bottom: 1.5rem;">Generators require regular oil changes, fuel storage, and are extremely noisy during operation. Solar batteries are silent, have no moving parts, and require zero routine maintenance.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Daily Utility vs. Emergency Only</h2>
+          <p style="margin-bottom: 1.5rem;">Generators sit idle until an outage occurs. Batteries can be used every day to 'time-shift' your solar energy, helping you avoid expensive peak grid rates during the evenings.</p>
+          <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">3. Reliability and Duration</h2>
+          <p style="margin-bottom: 1.5rem;">A generator's duration is limited by your fuel supply. A solar battery combined with solar panels system can theoretically keep your critical loads running indefinitely as long as there is sunlight to recharge the units.</p>
+        `
+      }
+    };
+
+    function loadPost() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const postKey = urlParams.get('post');
+      
+      const post = postsData[postKey] || postsData['top-5-tech']; // Default to first post
+      
+      document.getElementById('post-category').textContent = post.category;
+      document.getElementById('post-title').textContent = post.title;
+      document.getElementById('post-image').src = post.image;
+      document.getElementById('post-content').innerHTML = post.content;
+      
+      // Update page title
+      document.title = post.title + ' | SolarWave Blog';
+    }
+
+    window.onload = loadPost;
+    lucide.createIcons();
+  </script>
 </body>
 
 </html>
+

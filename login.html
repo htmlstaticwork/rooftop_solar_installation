@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
-<head>
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | SolarWave</title>
@@ -15,14 +16,43 @@
     <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i data-lucide="languages"></i></button>
   </div>
 
-  <div class="card" style="width: 100%; max-width: 450px; padding: 3rem; background: var(--background); box-shadow: var(--shadow-lg); border-radius: 1.5rem;">
-    <div style="text-align: center; margin-bottom: 2.5rem;">
-      <a href="index.html" class="logo" style="justify-content: center; font-size: 2rem;">
+  <div class="card" style="width: 100%; max-width: 400px; padding: 2.25rem; background: var(--background); box-shadow: var(--shadow-lg); border-radius: 1.5rem;">
+    <div style="text-align: center; margin-bottom: 1.5rem;">
+      <a href="index.html" class="logo" style="justify-content: center; font-size: 1.75rem;">
         <i data-lucide="sun" style="color: var(--primary);"></i>
         Solar<span>Wave</span>
       </a>
       <h2 style="margin-top: 1rem; font-size: 1.5rem;">Welcome <span>Back</span></h2>
       <p style="color: var(--text-muted); font-size: 0.9rem;">Monitor your energy from anywhere.</p>
+    </div>
+
+    <form style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; text-align: left;">
+      <div>
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Email Address</label>
+        <input type="email" placeholder="email@example.com" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);" required>
+      </div>
+      <div>
+        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Password</label>
+        <div style="position: relative;">
+           <input type="password" id="password" placeholder="••••••••" style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);" required>
+           <button type="button" id="toggle-password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
+             <i data-lucide="eye" size="20"></i>
+           </button>
+        </div>
+      </div>
+      <div class="flex" style="justify-content: space-between; font-size: 0.85rem; margin-bottom: 1rem; width: 100%;">
+        <label class="flex" style="gap: 0.5rem; cursor: pointer; justify-content: flex-start;">
+          <input type="checkbox"> Remember Me
+        </label>
+        <a href="#" class="hover-link" style="color: var(--primary); font-weight: 600; transition: var(--transition);">Forgot Password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; border-radius: 0.5rem; font-weight: 700;">Login</button>
+    </form>
+
+    <div class="flex" style="margin: 2rem 0; color: var(--text-muted); font-size: 0.8rem; justify-content: center; gap: 0.5rem;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      OR
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
     </div>
 
     <!-- Social Logins -->
@@ -37,37 +67,9 @@
       </button>
     </div>
 
-    <div class="flex" style="margin-bottom: 2rem; color: var(--text-muted); font-size: 0.8rem; justify-content: center; gap: 0.5rem;">
-      <div style="flex: 1; height: 1px; background: var(--border);"></div>
-      OR
-      <div style="flex: 1; height: 1px; background: var(--border);"></div>
-    </div>
 
-    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-      <div>
-        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Email Address</label>
-        <input type="email" placeholder="email@example.com" style="width: 100%; padding: 0.85rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);" required>
-      </div>
-      <div>
-        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600; font-size: 0.9rem;">Password</label>
-        <div style="position: relative;">
-           <input type="password" id="password" placeholder="••••••••" style="width: 100%; padding: 0.85rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);" required>
-           <button type="button" id="toggle-password" style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
-             <i data-lucide="eye" size="20"></i>
-           </button>
-        </div>
-      </div>
-      <div class="flex" style="justify-content: space-between; font-size: 0.85rem;">
-        <label class="flex" style="gap: 0.5rem; cursor: pointer;">
-          <input type="checkbox"> Remember Me
-        </label>
-        <a href="#" style="color: var(--primary); font-weight: 600;">Forgot Password?</a>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; border-radius: 0.5rem; font-weight: 700;">Login to Dashboard</button>
-    </form>
-
-    <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-muted);">
-      Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 600;">Create Account</a>
+    <p style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted);">
+      Don't have an account? <a href="register.html" class="hover-link" style="color: var(--primary); font-weight: 600; transition: var(--transition);">Create Account</a>
     </p>
   </div>
 

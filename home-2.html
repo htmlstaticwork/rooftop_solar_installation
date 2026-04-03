@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
 
-<head>
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SolarWave Premium | Eco-Friendly Living</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     /* Home 2 specific styles for "Premium" look */
     .hero-premium {
@@ -48,7 +51,6 @@
 
 <body>
 
-  <!-- Header -->
   <header class="header">
     <div class="container nav">
       <a href="index.html" class="logo">
@@ -64,16 +66,22 @@
         <li><a href="blog.html" class="nav-link">Blog</a></li>
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
-        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn"><i data-lucide="moon"></i></button>
-        <button id="rtl-toggle" class="toggle-btn"><i data-lucide="languages"></i></button>
+        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+          <i data-lucide="languages"></i>
+        </button>
         <div class="hamburger" id="hamburger">
-          <span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -126,33 +134,33 @@
         <h2 style="font-size: 2.5rem;">Monitor from <span>Anywhere</span></h2>
         <p style="color: var(--text-muted);">Our industry-leading mobile app puts the control in your hands.</p>
       </div>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-        <div class="text-center">
+      <div class="grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto; gap: 3rem;">
+        <div class="text-center" style="padding: 2rem; background: var(--background); border-radius: 1.5rem; border: 1px solid var(--border); transition: var(--transition);">
           <i data-lucide="smartphone"
             style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1.5rem;"></i>
-          <h3>Mobile Control</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Adjust settings and monitor production from your
+          <h3 style="margin-bottom: 1rem;">Mobile Control</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Adjust settings and monitor production from your
             smartphone.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center" style="padding: 2rem; background: var(--background); border-radius: 1.5rem; border: 1px solid var(--border); transition: var(--transition);">
           <i data-lucide="bar-chart-3"
             style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1.5rem;"></i>
-          <h3>Usage Analytics</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Detailed reports on how much energy you use vs. how
+          <h3 style="margin-bottom: 1rem;">Usage Analytics</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Detailed reports on how much energy you use vs. how
             much you generate.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center" style="padding: 2rem; background: var(--background); border-radius: 1.5rem; border: 1px solid var(--border); transition: var(--transition);">
           <i data-lucide="shield-check"
             style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1.5rem;"></i>
-          <h3>Health Alerts</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Get notified instantly if any component of your system
+          <h3 style="margin-bottom: 1rem;">Health Alerts</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Get notified instantly if any component of your system
             needs attention.</p>
         </div>
-        <div class="text-center">
+        <div class="text-center" style="padding: 2rem; background: var(--background); border-radius: 1.5rem; border: 1px solid var(--border); transition: var(--transition);">
           <i data-lucide="cloud-lightning"
             style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1.5rem;"></i>
-          <h3>Savings Tracker</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);">Watch your dollar savings grow in real-time as you
+          <h3 style="margin-bottom: 1rem;">Savings Tracker</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">Watch your dollar savings grow in real-time as you
             generate energy.</p>
         </div>
       </div>
@@ -167,7 +175,7 @@
   <section class="section-padding">
     <div class="container premium-grid">
       <div>
-        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
+        <img src="assets/images/Top 5 Solar.png"
           alt="Sustainability" style="border-radius: 2rem;">
       </div>
       <div>
@@ -251,14 +259,14 @@
       <div class="footer-grid">
         <div class="footer-info">
           <a href="index.html" class="footer-logo">
-            <i data-lucide="sun"></i> Solar <span>Wave</span>
+            <i data-lucide="sun" style="color: var(--primary);"></i> Solar<span>Wave</span>
           </a>
           <p class="footer-text">Leading the transition to sustainable energy with premium residential solar solutions. Excellence in every installation.</p>
           <div class="social-links">
-            <a href="#" class="social-link" aria-label="Facebook"><i data-lucide="facebook"></i></a>
-            <a href="#" class="social-link" aria-label="Twitter"><i data-lucide="twitter"></i></a>
-            <a href="#" class="social-link" aria-label="Instagram"><i data-lucide="instagram"></i></a>
-            <a href="#" class="social-link" aria-label="Linkedin"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
         <div class="footer-links">
@@ -280,6 +288,15 @@
             <li><a href="register.html">Register</a></li>
           </ul>
         </div>
+        <div class="footer-links">
+          <h4>Contact Info</h4>
+          <ul>
+            <li class="contact-item"><i data-lucide="map-pin" size="16"></i> 123 Solar Street, CA 90210</li>
+            <li class="contact-item"><i data-lucide="phone" size="16"></i> +1 (555) 123-4567</li>
+            <li class="contact-item"><i data-lucide="mail" size="16"></i> info@solarwave.com</li>
+            <li class="contact-item"><i data-lucide="clock" size="16"></i> Mon - Sat: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 SolarWave Installation. All rights reserved.</p>
@@ -292,3 +309,4 @@
 </body>
 
 </html>
+

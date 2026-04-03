@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Net Metering | SolarWave Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">
+        <i data-lucide="sun" style="color: var(--primary);"></i>
+        Solar<span>Wave</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="home-2.html" class="nav-link">Home 2</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
+        <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+          <i data-lucide="languages"></i>
+        </button>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article class="section-padding" style="padding-top: 10rem;">
+    <div class="container" style="max-width: 800px;">
+      <p style="font-size: 0.9rem; color: var(--primary); font-weight: 700; margin-bottom: 1rem;">SAVINGS | JAN 2026</p>
+      <h1 style="font-size: 3rem; line-height: 1.2; margin-bottom: 2rem;">Understanding Net Metering: How to Sell Back Energy</h1>
+      <img src="assets/images/How to Sell Back Energy.png"
+        alt="Net Metering" style="width: 100%; border-radius: 1.5rem; margin-bottom: 3rem;">
+
+      <div style="font-size: 1.1rem; color: var(--text-muted); line-height: 1.8;">
+        <p style="margin-bottom: 1.5rem;">One of the most powerful financial arguments for switching to solar energy is the concept of net metering. Net metering allows residential and commercial solar owners who generate their own electricity to feed information back to the grid and receive credit on their utility bills. Here is how it works and how you can maximize your ROI.</p>
+        
+        <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">1. Feeding Information to the Grid</h2>
+        <p style="margin-bottom: 1.5rem;">During the middle of a sunny day, your solar panels will likely produce more energy than your home actually consumes. With net metering, this excess electricity is exported back to the grid. In many states and countries, your energy meter actually runs backward as you contribute surplus clean power.</p>
+        
+        <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">2. Earning Bill Credits</h2>
+        <p style="margin-bottom: 1.5rem;">The export of energy generates bill credits. These credits can then be used at night or on cloudy days when your own system isn't producing enough power. Most utility companies allow you to carry these credits over month-to-month, helping you offset higher electricity usage during summer or winter peaks.</p>
+
+        <h2 style="color: var(--text-main); margin: 2rem 0 1rem;">3. Full vs. Partial Compensation</h2>
+        <p style="margin-bottom: 1.5rem;">Not all net metering policies are created equal. Some utilities offer a 1-to-1 credit (meaning every kWh you give is worth the same as a kWh you buy), while others use a "Net Billing" model with lower export rates. Understanding your local utility's policy is crucial for calculating your long-term savings.</p>
+      </div>
+    </div>
+  </article>
+
+  <section class="section-padding" style="background-color: var(--surface);">
+    <div class="container" style="max-width: 800px;">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Add a <span>Comment</span></h2>
+      <form style="display: flex; flex-direction: column; gap: 1rem;">
+        <div class="flex" style="gap: 1rem;">
+          <input type="text" placeholder="Your Name"
+            style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); flex: 1; background: var(--background);">
+          <input type="email" placeholder="Your Email"
+            style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); flex: 1; background: var(--background);">
+        </div>
+        <textarea placeholder="Write your message here..."
+          style="padding: 1rem; min-height: 150px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);"></textarea>
+        <button class="btn btn-primary" style="align-self: flex-start; padding: 1rem 2.5rem;">Post Comment</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container text-center">
+      <h2 style="font-size: 2rem; margin-bottom: 2rem;">Related <span>Articles</span></h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        <div class="card" style="text-align: left;">
+          <a href="blog-winter-efficiency.html">
+            <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=400" alt="Related" class="card-img" style="height: 150px;">
+            <h3 style="padding: 1rem; font-size: 1.1rem;">Winter Solar Efficiency Tips</h3>
+          </a>
+        </div>
+        <div class="card" style="text-align: left;">
+          <a href="blog-batteries-vs-generators.html">
+            <img src="assets/images/Solar Batteries vs. Generators.png" alt="Related" class="card-img" style="height: 150px;">
+            <h3 style="padding: 1rem; font-size: 1.1rem;">Solar Batteries vs. Generators</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <a href="index.html" class="footer-logo">
+            <i data-lucide="sun" style="color: var(--primary);"></i> Solar<span>Wave</span>
+          </a>
+          <p class="footer-text">Leading the transition to sustainable energy with premium residential solar solutions.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 SolarWave Installation. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+
+</html>

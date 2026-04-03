@@ -69,12 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       header.classList.add('scrolled');
-      header.style.backgroundColor = body.getAttribute('data-theme') === 'dark'
-        ? 'rgba(15, 23, 42, 0.95)'
-        : 'rgba(255, 255, 255, 0.95)';
     } else {
       header.classList.remove('scrolled');
-      header.style.backgroundColor = 'transparent';
     }
   });
 

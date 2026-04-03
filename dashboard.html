@@ -1,181 +1,631 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Dashboard | SolarWave</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://unpkg.com/lucide@latest"></script>
+
+ <head>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>User Dashboard | SolarWave</title>
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body class="dashboard-body">
 
-  <div class="dashboard-layout">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-logo">
-        <i data-lucide="sun" style="color: var(--primary);"></i>
-        Solar<span>Wave</span>
-      </div>
-      
-      <nav class="sidebar-nav">
-        <a href="#overview" class="sidebar-link active"><i data-lucide="layout-dashboard" size="20"></i> Overview</a>
-        <a href="#energy" class="sidebar-link"><i data-lucide="zap" size="20"></i> Energy Stats</a>
-        <a href="#savings" class="sidebar-link"><i data-lucide="banknote" size="20"></i> Savings Tracking</a>
-        <a href="#installation" class="sidebar-link"><i data-lucide="hammer" size="20"></i> Installation</a>
-        <a href="#messages" class="sidebar-link flex" style="justify-content: space-between;">
-           <span class="flex" style="gap: 1rem;"><i data-lucide="message-square" size="20"></i> Messages</span>
-           <span style="background: var(--primary); color: var(--secondary); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 1rem; font-weight: 800;">3</span>
-        </a>
-        <a href="#settings" class="sidebar-link"><i data-lucide="settings" size="20"></i> Settings</a>
-      </nav>
+   <div class="dashboard-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+         <a href="index.html" class="sidebar-logo"
+            style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 3rem; text-decoration: none; cursor: pointer; transition: opacity 0.3s ease;">
+            <i data-lucide="sun" style="color: var(--primary);"></i>
+            <span style="color: var(--white); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.5rem;">Solar</span><span
+               style="color: var(--primary); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.5rem;">Wave</span>
+         </a>
 
-      <!-- Profile Section -->
-      <div style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem;">
-        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
-        <div style="overflow: hidden;">
-           <h4 style="font-size: 0.9rem; color: white; white-space: nowrap; text-overflow: ellipsis;">Michael Chen</h4>
-           <p style="font-size: 0.7rem; color: #94A3B8;">Homeowner</p>
-        </div>
-      </div>
+         <nav class="sidebar-nav">
+            <a href="#overview" class="sidebar-link active"><i data-lucide="layout-dashboard" size="20"></i>
+               Overview</a>
+            <a href="#energy" class="sidebar-link"><i data-lucide="zap" size="20"></i> Energy Stats</a>
+            <a href="#savings" class="sidebar-link"><i data-lucide="banknote" size="20"></i> Savings Tracking</a>
+            <a href="#installation" class="sidebar-link"><i data-lucide="hammer" size="20"></i> Installation</a>
+            <a href="#messages" class="sidebar-link flex" style="justify-content: space-between;">
+               <span class="flex" style="gap: 1rem;"><i data-lucide="message-square" size="20"></i> Messages</span>
+               <span
+                  style="background: var(--primary); color: var(--secondary); font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 1rem; font-weight: 800;">3</span>
+            </a>
+            <a href="#settings" class="sidebar-link"><i data-lucide="settings" size="20"></i> Settings</a>
+         </nav>
 
-      <!-- Logout -->
-      <a href="index.html" id="logout-btn" class="sidebar-link sidebar-logout" style="margin-top: 2rem; color: #F87171;">
-        <i data-lucide="log-out" size="20"></i> Logout
-      </a>
-    </aside>
+         <!-- Profile Section -->
+         <div
+            style="margin-top: 2rem; padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 0.75rem; display: flex; align-items: center; gap: 1rem;">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100"
+               alt="Avatar" style="width: 40px; height: 40px; border-radius: 50%;">
+            <div style="overflow: hidden;">
+               <h4 style="font-size: 0.9rem; color: white; white-space: nowrap; text-overflow: ellipsis;">Michael Chen
+               </h4>
+               <p style="font-size: 0.7rem; color: #94A3B8;">Homeowner</p>
+            </div>
+         </div>
 
-    <!-- Main Content -->
-    <main class="dashboard-main">
-      <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-        <div>
-          <h1 style="font-size: 1.75rem;">Welcome back, <span>Michael!</span></h1>
-          <p style="color: var(--text-muted); font-size: 0.9rem;">Here is what's happening with your energy today.</p>
-        </div>
-        <div class="flex" style="gap: 1rem;">
-          <button id="dark-mode-toggle" class="toggle-btn" style="background: white; transform: scale(1.1); box-shadow: var(--shadow);"><i data-lucide="moon"></i></button>
-          <button id="rtl-toggle" class="toggle-btn" style="background: white; transform: scale(1.1); box-shadow: var(--shadow);"><i data-lucide="languages"></i></button>
-        </div>
-      </header>
+         <!-- Logout -->
+         <a href="index.html" id="logout-btn" class="sidebar-link sidebar-logout"
+            style="margin-top: 2rem; color: #F87171;">
+            <i data-lucide="log-out" size="20"></i> Logout
+         </a>
+      </aside>
 
-      <!-- Top Stats Grid -->
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-bottom: 2rem;">
-        <div class="card">
-           <div class="flex" style="justify-content: space-between; margin-bottom: 1.5rem;">
-              <div style="background: rgba(250, 215, 21, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: var(--primary);"><i data-lucide="sun"></i></div>
-              <span style="font-size: 0.8rem; color: #10B981; font-weight: 700;">+12%</span>
-           </div>
-           <h3 style="font-size: 1.5rem;" id="production-value">24.50</h3>
-           <p style="color: var(--text-muted); font-size: 0.8rem;">Daily Production (kWh)</p>
-        </div>
-        <div class="card">
-           <div class="flex" style="justify-content: space-between; margin-bottom: 1.5rem;">
-              <div style="background: rgba(14, 165, 233, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: var(--accent);"><i data-lucide="wallet"></i></div>
-              <span style="font-size: 0.8rem; color: #10B981; font-weight: 700;">SAVED</span>
-           </div>
-           <h3 style="font-size: 1.5rem;" id="savings-value">$1,245.82</h3>
-           <p style="color: var(--text-muted); font-size: 0.8rem;">Total Savings Lifetime</p>
-        </div>
-        <div class="card">
-           <div class="flex" style="justify-content: space-between; margin-bottom: 1.5rem;">
-              <div style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #10B981;"><i data-lucide="leaf"></i></div>
-              <span style="font-size: 0.8rem; color: var(--text-muted);">ACTIVE</span>
-           </div>
-           <h3 style="font-size: 1.5rem;">4.2 Tons</h3>
-           <p style="color: var(--text-muted); font-size: 0.8rem;">CO2 Offset Contribution</p>
-        </div>
-        <div class="card">
-           <div class="flex" style="justify-content: space-between; margin-bottom: 1.5rem;">
-              <div style="background: rgba(244, 63, 94, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #F43F5E;"><i data-lucide="refresh-ccw"></i></div>
-              <span style="font-size: 0.8rem; color: #F43F5E; font-weight: 700;">LIVE</span>
-           </div>
-           <h3 style="font-size: 1.5rem;">+2.4 kW</h3>
-           <p style="color: var(--text-muted); font-size: 0.8rem;">Current Grid Export</p>
-        </div>
-      </div>
+      <!-- Main Content -->
+      <main class="dashboard-main">
+         <header
+            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem;">
+            <div>
+               <h1 style="font-size: 1.85rem; margin-bottom: 0.25rem; white-space: nowrap;">Welcome back, <span
+                     style="color: var(--primary);">Michael!</span></h1>
+               <p style="color: var(--text-muted); font-size: 0.95rem;">Here is what's happening with your energy today.
+               </p>
+            </div>
+         </header>
 
-      <!-- Secondary Info Grid -->
-      <div class="grid" style="grid-template-columns: 2fr 1fr; gap: 2rem;">
-        <!-- Installation Progress -->
-        <div class="card">
-           <h3 style="margin-bottom: 1.5rem;">Installation <span>Progress</span></h3>
-           <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Phase 3: Battery Installation in progress.</p>
-           
-           <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-              <div class="progress-step-item">
-                 <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600; font-size: 0.9rem;">Site Audit</span>
-                    <span style="font-weight: 700; color: #10B981;">COMPLETED</span>
-                 </div>
-                 <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;"><div style="width: 100%; height: 100%; background: #10B981;"></div></div>
-              </div>
-              <div class="progress-step-item">
-                 <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600; font-size: 0.9rem;">Panel Mounting</span>
-                    <span style="font-weight: 700; color: #10B981;">COMPLETED</span>
-                 </div>
-                 <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;"><div style="width: 100%; height: 100%; background: #10B981;"></div></div>
-              </div>
-              <div class="progress-step-item">
-                 <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
-                    <span style="font-weight: 600; font-size: 0.9rem;">Battery & Inverter Setup</span>
-                    <span style="font-weight: 700; color: var(--primary);">IN PROGRESS</span>
-                 </div>
-                 <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;"><div style="width: 65%; height: 100%; background: var(--primary);"></div></div>
-              </div>
-           </div>
-        </div>
+         <!-- Tab Contents -->
+         <div id="overview" class="tab-content active">
+            <!-- Top Stats Grid -->
+            <div class="dash-grid">
+               <div class="card dash-card">
+                  <div class="flex" style="justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+                     <div
+                        style="background: rgba(250, 215, 21, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: var(--primary);">
+                        <i data-lucide="sun"></i>
+                     </div>
+                     <span style="font-size: 0.8rem; color: #10B981; font-weight: 700;">+12%</span>
+                  </div>
+                  <h3 style="font-size: 1.5rem; margin: 0.5rem 0;" id="production-value">24.50</h3>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Daily Production (kWh)</p>
+               </div>
+               <div class="card dash-card">
+                  <div class="flex" style="justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+                     <div
+                        style="background: rgba(14, 165, 233, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: var(--accent);">
+                        <i data-lucide="wallet"></i>
+                     </div>
+                     <span style="font-size: 0.8rem; color: #10B981; font-weight: 700;">SAVED</span>
+                  </div>
+                  <h3 style="font-size: 1.5rem; margin: 0.5rem 0;" id="savings-value">$1,245.82</h3>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Total Savings Lifetime</p>
+               </div>
+               <div class="card dash-card">
+                  <div class="flex" style="justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+                     <div
+                        style="background: rgba(16, 185, 129, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #10B981;">
+                        <i data-lucide="leaf"></i>
+                     </div>
+                     <span style="font-size: 0.8rem; color: var(--text-muted);">ACTIVE</span>
+                  </div>
+                  <h3 style="font-size: 1.5rem; margin: 0.5rem 0;">4.2 Tons</h3>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">CO2 Offset Contribution</p>
+               </div>
+               <div class="card dash-card">
+                  <div class="flex" style="justify-content: space-between; width: 100%; margin-bottom: 1.5rem;">
+                     <div
+                        style="background: rgba(244, 63, 94, 0.1); padding: 0.75rem; border-radius: 0.75rem; color: #F43F5E;">
+                        <i data-lucide="refresh-ccw"></i>
+                     </div>
+                     <span style="font-size: 0.8rem; color: #F43F5E; font-weight: 700;">LIVE</span>
+                  </div>
+                  <h3 style="font-size: 1.5rem; margin: 0.5rem 0;">+2.4 kW</h3>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Current Grid Export</p>
+               </div>
+            </div>
 
-        <!-- Notifications -->
-        <div class="card">
-           <h3 style="margin-bottom: 1.5rem;">Notifications</h3>
-           <div style="display: flex; flex-direction: column; gap: 1rem;">
-              <div class="notification-item" style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.75rem; cursor: pointer;">
-                 <p style="font-weight: 600; font-size: 0.85rem;">System Update</p>
-                 <p style="font-size: 0.75rem; color: var(--text-muted);">Inverter firmware updated successfully.</p>
-              </div>
-              <div class="notification-item" style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.75rem; cursor: pointer;">
-                 <p style="font-weight: 600; font-size: 0.85rem;">Monthly Report</p>
-                 <p style="font-size: 0.75rem; color: var(--text-muted);">Your March report is ready to download.</p>
-              </div>
-              <div class="notification-item" style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.75rem; cursor: pointer;">
-                 <p style="font-weight: 600; font-size: 0.85rem;">Maintenance Alert</p>
-                 <p style="font-size: 0.75rem; color: var(--text-muted);">Panel cleaning service scheduled for April 10th.</p>
-              </div>
-           </div>
-        </div>
-      </div>
-    </main>
-  </div>
+            <!-- Secondary Info Grid -->
+            <div class="grid secondary-grid">
+               <!-- Installation Progress -->
+               <div class="card dash-card">
+                  <h3 style="margin-bottom: 1.5rem; text-align: start;">Installation <span>Progress</span></h3>
+                  <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem;">Phase 3: Battery
+                     Installation in progress.</p>
 
-  <style>
-     .dashboard-body {
-        margin: 0;
-        background-color: #F1F5F9;
-        overflow-x: hidden;
-     }
-     [data-theme="dark"] .dashboard-body {
-        background-color: #0F172A;
-     }
-     .dashboard-main {
-        padding: 2.5rem 3.5rem;
-     }
+                  <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%;">
+                     <div class="progress-step-item">
+                        <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                           <span style="font-weight: 600; font-size: 0.9rem;">Site Audit</span>
+                           <span style="font-weight: 700; color: #10B981;">COMPLETED</span>
+                        </div>
+                        <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                           <div style="width: 100%; height: 100%; background: #10B981;"></div>
+                        </div>
+                     </div>
+                     <div class="progress-step-item">
+                        <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                           <span style="font-weight: 600; font-size: 0.9rem;">Panel Mounting</span>
+                           <span style="font-weight: 700; color: #10B981;">COMPLETED</span>
+                        </div>
+                        <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                           <div style="width: 100%; height: 100%; background: #10B981;"></div>
+                        </div>
+                     </div>
+                     <div class="progress-step-item">
+                        <div class="flex" style="justify-content: space-between; margin-bottom: 0.5rem;">
+                           <span style="font-weight: 600; font-size: 0.9rem;">Battery & Inverter Setup</span>
+                           <span style="font-weight: 700; color: var(--primary);">IN PROGRESS</span>
+                        </div>
+                        <div style="height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                           <div style="width: 65%; height: 100%; background: var(--primary);"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
 
-     @media (max-width: 1024px) {
-        .dashboard-layout {
-           grid-template-columns: 1fr;
-        }
-        .sidebar {
-           display: none; /* In a real app we'd have a mobile drawer here */
-        }
-        .dashboard-main {
-           margin-left: 0;
-           padding: 1.5rem;
-        }
-     }
-  </style>
+               <!-- Notifications -->
+               <div class="card dash-card">
+                  <h3 style="margin-bottom: 1.5rem; text-align: start;">Notifications</h3>
+                  <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                     <div class="notification-item"
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.75rem; cursor: pointer;">
+                        <p style="font-weight: 600; font-size: 0.85rem;">System Update</p>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Inverter firmware updated successfully.
+                        </p>
+                     </div>
+                     <div class="notification-item"
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.75rem; cursor: pointer;">
+                        <p style="font-weight: 600; font-size: 0.85rem;">Monthly Report</p>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Your March report is ready to download.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/dashboard.js"></script>
-  <script>lucide.createIcons();</script>
+            <!-- New Overview Section: Recent Activity -->
+            <div class="card dash-card" style="margin-top: 2rem;">
+               <h3 style="margin-bottom: 1.5rem; text-align: start;">Recent Activity <span>Timeline</span></h3>
+               <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; border-inline-start: 2px solid var(--border); padding-inline-start: 1.5rem; margin-inline-start: 0.5rem; position: relative;">
+                  <div style="position: relative;">
+                     <div style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: #10B981; border: 2px solid var(--surface);"></div>
+                     <p style="font-weight: 700; font-size: 0.9rem;">Peak Efficiency Reached</p>
+                     <p style="font-size: 0.8rem; color: var(--text-muted);">System hit 98.4% efficiency at 12:45 PM today.</p>
+                  </div>
+                  <div style="position: relative;">
+                     <div style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid var(--surface);"></div>
+                     <p style="font-weight: 700; font-size: 0.9rem;">Monthly Savings Milestone</p>
+                     <p style="font-size: 0.8rem; color: var(--text-muted);">You've saved over $150 this month so far.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Energy Stats Tab -->
+         <div id="energy" class="tab-content">
+            <div class="dash-grid">
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Real-time Analytics</h3>
+                  <div style="width: 100%; height: 150px; background: rgba(250, 215, 21, 0.05); border: 1px dashed var(--primary); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                     <p style="color: var(--text-muted); font-size: 0.8rem;">[Live Performance Chart]</p>
+                  </div>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Weekly Comparison</h3>
+                  <div style="width: 100%; height: 150px; background: rgba(14, 165, 233, 0.05); border: 1px dashed var(--accent); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                     <p style="color: var(--text-muted); font-size: 0.8rem;">[Week-over-Week Stats]</p>
+                  </div>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Device Breakdown</h3>
+                  <div style="width: 100%; height: 150px; background: rgba(16, 185, 129, 0.05); border: 1px dashed #10B981; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                     <p style="color: var(--text-muted); font-size: 0.8rem;">[Appliance Usage List]</p>
+                  </div>
+               </div>
+            </div>
+            
+            <div class="secondary-grid">
+               <div class="card dash-card">
+                  <h3 style="margin-bottom: 1rem;">Environmental Impact</h3>
+                  <div class="flex" style="gap: 2rem; justify-content: space-around; width: 100%;">
+                     <div style="text-align: center;">
+                        <div style="color: #10B981; font-size: 1.5rem; margin-bottom: 0.5rem;"><i data-lucide="trees"></i></div>
+                        <p style="font-weight: 800; font-size: 1.2rem;">42</p>
+                        <p style="font-size: 0.7rem; color: var(--text-muted);">Trees Planted</p>
+                     </div>
+                     <div style="text-align: center;">
+                        <div style="color: #3B82F1; font-size: 1.5rem; margin-bottom: 0.5rem;"><i data-lucide="cloud"></i></div>
+                        <p style="font-weight: 800; font-size: 1.2rem;">1.2t</p>
+                        <p style="font-size: 0.7rem; color: var(--text-muted);">Carbon Reduced</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="margin-bottom: 1rem;">Peak Hour Analysis</h3>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Most power generated between 11 AM - 3 PM.</p>
+                  <div style="height: 10px; background: #E2E8F0; border-radius: 5px; overflow: hidden; width: 100%;">
+                     <div style="width: 75%; height: 100%; background: #FACC15;"></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Savings Tracking Tab -->
+         <div id="savings" class="tab-content">
+            <div class="dash-grid">
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Financial ROI</h3>
+                  <p style="font-size: 2rem; font-weight: 700; color: #10B981;">18.4%</p>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Annual Return on Investment</p>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Cumulative Savings</h3>
+                  <p style="font-size: 2rem; font-weight: 700; color: var(--accent);">$4,280.50</p>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Net Savings Since Start</p>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Carbon Credits</h3>
+                  <p style="font-size: 2rem; font-weight: 700; color: var(--primary);">12.5</p>
+                  <p style="color: var(--text-muted); font-size: 0.8rem;">Generated Clean Energy Credits</p>
+               </div>
+            </div>
+
+            <div class="card dash-card" style="margin-top: 2rem;">
+               <h3 style="margin-bottom: 1.5rem;">Monthly Dividend <span>History</span></h3>
+               <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                  <thead style="border-bottom: 1px solid var(--border);">
+                     <tr style="text-align: start; color: var(--text-muted);">
+                        <th style="padding: 1rem 0.5rem;">Month</th>
+                        <th style="padding: 1rem 0.5rem;">Yield</th>
+                        <th style="padding: 1rem 0.5rem;">Dividend</th>
+                        <th style="padding: 1rem 0.5rem;">Status</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 1rem 0.5rem;">March</td>
+                        <td style="padding: 1rem 0.5rem;">740 kWh</td>
+                        <td style="padding: 1rem 0.5rem;">$142.50</td>
+                        <td style="padding: 1rem 0.5rem; color: #10B981;">Paid</td>
+                     </tr>
+                     <tr>
+                        <td style="padding: 1rem 0.5rem;">February</td>
+                        <td style="padding: 1rem 0.5rem;">620 kWh</td>
+                        <td style="padding: 1rem 0.5rem;">$118.20</td>
+                        <td style="padding: 1rem 0.5rem; color: #10B981;">Paid</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+
+         <!-- Installation Tab -->
+         <div id="installation" class="tab-content">
+            <div class="grid secondary-grid" style="display: flex; gap: 1.5rem;">
+               <div class="card dash-card" style="flex: 1;">
+                  <h3 style="margin-bottom: 1.5rem;">Project Roadmap</h3>
+                  <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
+                        <p style="font-weight: 600; font-size: 0.85rem;">Phase 1: Permitting</p>
+                        <p style="font-size: 0.75rem; color: #10B981;">Done (March 15)</p>
+                     </div>
+                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
+                        <p style="font-weight: 600; font-size: 0.85rem;">Phase 2: Hardware Delivery</p>
+                        <p style="font-size: 0.75rem; color: #10B981;">Done (March 22)</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="card dash-card" style="flex: 1;">
+                  <h3 style="margin-bottom: 1.5rem;">Technical Specs</h3>
+                  <ul style="width: 100%; display: flex; flex-direction: column; gap: 0.5rem; text-align: start;">
+                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);"><strong>Panels:</strong> 24x Q-CELL 400W</li>
+                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);"><strong>Inverter:</strong> SolarEdge SE7600H</li>
+                     <li style="font-size: 0.85rem;"><strong>Battery:</strong> LG Resu 10 Prime</li>
+                  </ul>
+               </div>
+               <div class="card dash-card" style="flex: 1;">
+                  <h3 style="margin-bottom: 1.5rem;">System Maintenance</h3>
+                  <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                     <div style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="calendar" style="color: var(--primary);"></i>
+                        <div>
+                           <p style="font-size: 0.8rem; font-weight: 700;">Panel Cleaning</p>
+                           <p style="font-size: 0.7rem; color: var(--text-muted);">Due in 15 days (April 18)</p>
+                        </div>
+                     </div>
+                     <div style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                        <i data-lucide="check-circle" style="color: #10B981;"></i>
+                        <div>
+                           <p style="font-size: 0.8rem; font-weight: 700;">Inverter Check</p>
+                           <p style="font-size: 0.7rem; color: var(--text-muted);">Completed March 01</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card dash-card" style="flex: 1;">
+                  <h3 style="margin-bottom: 1.5rem;">Warranties</h3>
+                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Performance:</strong> 25 Year Limited</p>
+                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Hardware:</strong> 12 Year Manufacturer</p>
+                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Request Service</button>
+               </div>
+            </div>
+         </div>
+
+         <!-- Messages Tab -->
+         <div id="messages" class="tab-content">
+            <div class="dash-grid">
+               <div class="card dash-card" style="flex: 2;">
+                  <h3 style="margin-bottom: 1.5rem;">Inbox</h3>
+                  <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between;">
+                        <div>
+                           <p style="font-weight: 600; font-size: 0.85rem;">Technical Support</p>
+                           <p style="font-size: 0.75rem; color: var(--text-muted);">How's the noise level?</p>
+                        </div>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">2h ago</span>
+                     </div>
+                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between; border-left: 4px solid var(--primary);">
+                        <div>
+                           <p style="font-weight: 600; font-size: 0.85rem;">Welcome Team</p>
+                           <p style="font-size: 0.75rem; color: var(--text-muted);">Welcome to SolarWave, Michael!</p>
+                        </div>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">Mar 25</span>
+                     </div>
+                  </div>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="margin-bottom: 1.5rem;">Archived</h3>
+                  <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
+                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; padding: 2rem;">No archived messages.</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Settings Tab -->
+         <div id="settings" class="tab-content">
+            <div class="dash-grid">
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Profile Settings</h3>
+                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Edit Personal Info</button>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">System Alerts</h3>
+                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Configure Notifications</button>
+               </div>
+               <div class="card dash-card">
+                  <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Security</h3>
+                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Change Password</button>
+               </div>
+            </div>
+            
+            <div class="card dash-card" style="margin-top: 2rem;">
+               <h3 style="margin-bottom: 1.5rem;">Notification Preferences</h3>
+               <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
+                  <div class="flex" style="justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+                     <p style="font-size: 0.9rem;">Email Alerts for Yield Drops</p>
+                     <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 10px; position: relative; cursor: pointer;">
+                        <div style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div>
+                     </div>
+                  </div>
+                  <div class="flex" style="justify-content: space-between;">
+                     <p style="font-size: 0.9rem;">SMS for Maintenance Reminder</p>
+                     <div style="width: 40px; height: 20px; background: #CBD5E1; border-radius: 10px; position: relative; cursor: pointer;">
+                        <div style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; left: 2px; top: 2px;"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </main>
+   </div>
+
+   <style>
+      .dashboard-body {
+         margin: 0;
+         background-color: #F1F5F9;
+         overflow-x: hidden;
+      }
+
+      [data-theme="dark"] .dashboard-body {
+         background-color: #0F172A;
+      }
+
+      .dashboard-layout {
+         display: block !important; /* Disabling conflicting grid */
+         width: 100%;
+         overflow-x: hidden;
+      }
+
+      .dashboard-main {
+         position: relative;
+         margin-inline-start: 280px !important;
+         width: calc(100% - 280px) !important;
+         min-height: 100vh;
+         padding: 2.5rem 4rem !important; /* Generous padding for alignment */
+         box-sizing: border-box !important;
+         background-color: transparent;
+      }
+
+      @media (max-width: 1024px) {
+         .dashboard-layout {
+            display: block !important;
+         }
+
+         .sidebar {
+            display: none !important;
+         }
+
+         .dashboard-main {
+            margin-left: 0 !important;
+            width: 100% !important;
+            padding: 1.5rem !important;
+         }
+      }
+
+      [data-theme="dark"] .toggle-btn {
+         background-color: #1E293B !important;
+         color: #FFFFFF !important;
+         border-color: #334155 !important;
+      }
+
+      /* Dashboard Card Layout Fix - Prevents Skinny/Squeezed Cards & Sidebar Overlap */
+      .dash-grid,
+      .secondary-grid {
+         display: flex !important;
+         gap: 28px !important;
+         align-items: stretch !important;
+         flex-direction: row !important;
+         width: 100% !important;
+         max-width: 1100px !important; /* Centered contained width */
+         margin-left: auto !important;
+         margin-right: auto !important;
+         justify-content: center !important;
+         box-sizing: border-box !important;
+      }
+
+      /* Desktop: Ensure rectangular orientation by increasing minimum width */
+      @media (min-width: 993px) {
+
+         .dash-grid,
+         .secondary-grid {
+            flex-wrap: nowrap !important;
+         }
+
+         .dash-grid>.card,
+         .secondary-grid>.card {
+            flex: 1 1 0% !important;
+            min-width: 320px !important; /* Increased for rectangular proportion */
+            max-width: 550px !important; /* Optimized for balance */
+            width: auto !important;
+            margin-bottom: 0 !important;
+         }
+      }
+
+      /* Tablet: Maintain rectangular balance */
+      @media (max-width: 992px) and (min-width: 641px) {
+
+         .dash-grid,
+         .secondary-grid {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+         }
+
+         .dash-grid>.card,
+         .secondary-grid>.card {
+            flex: 0 0 calc(50% - 12px) !important;
+            min-width: 300px !important;
+            margin-bottom: 24px !important;
+         }
+      }
+
+      /* Mobile: Stack naturally */
+      @media (max-width: 640px) {
+
+         .dash-grid,
+         .secondary-grid {
+            flex-direction: column !important;
+         }
+
+         .dash-grid>.card,
+         .secondary-grid>.card {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            min-width: auto !important;
+            margin-bottom: 20px !important;
+         }
+      }
+      .tab-content {
+         display: none;
+         animation: fadeIn 0.4s ease;
+      }
+
+      .tab-content.active {
+         display: block;
+      }
+
+      @keyframes fadeIn {
+         from {
+            opacity: 0;
+            transform: translateY(10px);
+         }
+
+         to {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+   </style>
+
+   <div class="dashboard-fixed-controls"
+      style="position: fixed; top: 2rem; inset-inline-end: 2rem; display: flex; gap: 1rem; z-index: 9999;">
+      <button id="dark-mode-toggle" class="toggle-btn"
+         style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border); border-radius: 0.75rem; width: 44px; height: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><i
+            data-lucide="moon"></i></button>
+      <button id="rtl-toggle" class="toggle-btn"
+         style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border); border-radius: 0.75rem; width: 44px; height: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><i
+            data-lucide="languages"></i></button>
+   </div>
+
+   <script>
+      lucide.createIcons();
+
+      // Tab Switching Logic
+      document.querySelectorAll('.sidebar-link').forEach(link => {
+         link.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            if (!targetId || !targetId.startsWith('#')) return;
+
+            e.preventDefault();
+
+            // Handle Logout separately
+            if (this.classList.contains('sidebar-logout')) {
+               window.location.href = 'index.html';
+               return;
+            }
+
+            // Update Sidebar Active State
+            document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+
+            // Update Tab Visibility
+            const targetTab = document.querySelector(targetId);
+            if (targetTab) {
+               document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+               targetTab.classList.add('active');
+
+               // Re-trigger animations or icon renders if needed
+               window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+         });
+      });
+
+      // Dark Mode Functionality
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const htmlElement = document.documentElement;
+
+      // Check for saved user preference, first in localStorage, then system setting
+      const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      htmlElement.setAttribute('data-theme', savedTheme);
+
+      darkModeToggle.addEventListener('click', () => {
+         const currentTheme = htmlElement.getAttribute('data-theme');
+         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+         
+         htmlElement.setAttribute('data-theme', newTheme);
+         localStorage.setItem('theme', newTheme);
+         
+         // Update icon if needed
+         const icon = darkModeToggle.querySelector('i');
+         if (newTheme === 'dark') {
+            icon.setAttribute('data-lucide', 'sun');
+         } else {
+            icon.setAttribute('data-lucide', 'moon');
+         }
+         lucide.createIcons();
+      });
+
+      // RTL Functionality
+      const rtlToggle = document.getElementById('rtl-toggle');
+      rtlToggle.addEventListener('click', () => {
+         const currentDir = htmlElement.getAttribute('dir');
+         const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+         htmlElement.setAttribute('dir', newDir);
+      });
+   </script>
 </body>
+
 </html>
