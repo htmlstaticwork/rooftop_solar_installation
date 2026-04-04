@@ -101,6 +101,34 @@
       }
     }
 
+    @media (max-width: 1024px) {
+      .hero-title-premium,
+      .hero-subtitle-premium {
+        text-align: center !important;
+      }
+
+      .energy-header {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .energy-header h2,
+      .energy-header p {
+        text-align: center;
+      }
+    }
+
+    @media (width: 768px) {
+      .hero-title-premium,
+      .eco-impact-title {
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+      }
+    }
+
     @media (max-width: 480px) {
       .premium-grid {
         gap: 2rem;
@@ -140,6 +168,7 @@
       .hero-buttons-premium .btn {
         width: 100%;
         max-width: 280px;
+        min-width: unset;
         padding: 0.8rem 2rem !important;
       }
     }
@@ -151,6 +180,10 @@
       background: var(--surface);
       border-left: 4px solid var(--primary);
       transition: var(--transition);
+    }
+
+    .hero-buttons-premium .btn {
+      min-width: 240px;
     }
   </style>
 </head>
@@ -294,7 +327,7 @@
           alt="Sustainability" style="border-radius: 2rem;">
       </div>
       <div>
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">A Legacy for <span>Tomorrow</span></h2>
+        <h2 class="eco-impact-title" style="font-size: 2.5rem; margin-bottom: 2rem;">A Legacy for <span>Tomorrow</span></h2>
         <p style="color: var(--text-muted); margin-bottom: 2rem;">Every SolarWave installation is a step towards a
           greener planet. Join thousands of families who have collectively offset millions of tons of carbon.</p>
         <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">

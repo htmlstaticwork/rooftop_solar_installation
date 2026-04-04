@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light" dir="ltr">
 
- <head>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
+<head>
+   <link rel="icon" type="image/svg+xml"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23FACC15%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-sun%22><circle cx=%2212%22 cy=%2212%22 r=%224%22/><path d=%22M12 2v2%22/><path d=%22M12 20v2%22/><path d=%22m4.93 4.93 1.41 1.41%22/><path d=%22m17.66 17.66 1.41 1.41%22/><path d=%22M2 12h2%22/><path d=%22M20 12h2%22/><path d=%22m6.34 17.66-1.41 1.41%22/><path d=%22m19.07 4.93-1.41 1.41%22/></svg>">
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>User Dashboard | SolarWave</title>
    <link rel="stylesheet" href="assets/css/style.css">
    <script src="https://unpkg.com/lucide@latest"></script>
+   <style>
+      [data-theme="dark"] .dashboard-header.scrolled {
+         background: rgba(15, 23, 42, 0.95) !important;
+      }
+
+      [dir="rtl"] .dashboard-header {
+         flex-direction: row-reverse !important;
+      }
+   </style>
 </head>
 
 <body class="dashboard-body">
@@ -18,7 +28,8 @@
          <a href="index.html" class="sidebar-logo"
             style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 3rem; text-decoration: none; cursor: pointer; transition: opacity 0.3s ease;">
             <i data-lucide="sun" style="color: var(--primary);"></i>
-            <span style="color: var(--white); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.5rem;">Solar</span><span
+            <span
+               style="color: var(--white); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.5rem;">Solar</span><span
                style="color: var(--primary); font-weight: 800; font-family: 'Outfit', sans-serif; font-size: 1.5rem;">Wave</span>
          </a>
 
@@ -57,18 +68,27 @@
 
       <!-- Main Content -->
       <main class="dashboard-main">
-         <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
-            <i data-lucide="menu"></i>
-         </button>
-         <header
-            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2.5rem; flex-wrap: wrap; gap: 1.5rem; position: relative;">
-            <div>
-               <h1 style="font-size: 1.85rem; margin-bottom: 0.5rem; line-height: 1.2;">Welcome back, <span
-                     style="color: var(--primary); display: block;">Michael!</span></h1>
-               <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Here is what's happening with your energy today.
-               </p>
+         <header class="dashboard-header">
+            <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle Sidebar">
+               <i data-lucide="menu"></i>
+            </button>
+            <div class="header-controls">
+               <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Theme">
+                  <i data-lucide="moon"></i>
+               </button>
+               <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+                  <i data-lucide="languages"></i>
+               </button>
             </div>
          </header>
+
+         <div class="welcome-section" style="margin-bottom: 2.5rem;">
+            <h1 style="font-size: 1.85rem; margin-bottom: 0.5rem; line-height: 1.2;">Welcome back, <span
+                  style="color: var(--primary); display: block;">Michael!</span></h1>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.5;">Here is what's happening with
+               your energy today.
+            </p>
+         </div>
 
          <!-- Tab Contents -->
          <div id="overview" class="tab-content active">
@@ -183,16 +203,23 @@
             <div class="dash-grid" style="margin-top: 2rem;">
                <div class="card dash-card" style="flex: 1 1 100% !important; max-width: 100% !important;">
                   <h3 style="margin-bottom: 1.5rem; text-align: start;">Recent Activity <span>Timeline</span></h3>
-                  <div style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; border-inline-start: 2px solid var(--border); padding-inline-start: 1.5rem; margin-inline-start: 0.5rem; position: relative;">
+                  <div
+                     style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; border-inline-start: 2px solid var(--border); padding-inline-start: 1.5rem; margin-inline-start: 0.5rem; position: relative;">
                      <div style="position: relative;">
-                        <div style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: #10B981; border: 2px solid var(--surface);"></div>
+                        <div
+                           style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: #10B981; border: 2px solid var(--surface);">
+                        </div>
                         <p style="font-weight: 700; font-size: 0.9rem;">Peak Efficiency Reached</p>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">System hit 98.4% efficiency at 12:45 PM today.</p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">System hit 98.4% efficiency at 12:45 PM
+                           today.</p>
                      </div>
                      <div style="position: relative;">
-                        <div style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid var(--surface);"></div>
+                        <div
+                           style="position: absolute; inset-inline-start: -1.95rem; top: 0.25rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 2px solid var(--surface);">
+                        </div>
                         <p style="font-weight: 700; font-size: 0.9rem;">Monthly Savings Milestone</p>
-                        <p style="font-size: 0.8rem; color: var(--text-muted);">You've saved over $150 this month so far.</p>
+                        <p style="font-size: 0.8rem; color: var(--text-muted);">You've saved over $150 this month so
+                           far.</p>
                      </div>
                   </div>
                </div>
@@ -204,35 +231,40 @@
             <div class="dash-grid">
                <div class="card dash-card">
                   <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Real-time Analytics</h3>
-                  <div style="width: 100%; height: 150px; background: rgba(250, 215, 21, 0.05); border: 1px dashed var(--primary); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                  <div
+                     style="width: 100%; height: 150px; background: rgba(250, 215, 21, 0.05); border: 1px dashed var(--primary); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
                      <p style="color: var(--text-muted); font-size: 0.8rem;">[Live Performance Chart]</p>
                   </div>
                </div>
                <div class="card dash-card">
                   <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Weekly Comparison</h3>
-                  <div style="width: 100%; height: 150px; background: rgba(14, 165, 233, 0.05); border: 1px dashed var(--accent); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                  <div
+                     style="width: 100%; height: 150px; background: rgba(14, 165, 233, 0.05); border: 1px dashed var(--accent); border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
                      <p style="color: var(--text-muted); font-size: 0.8rem;">[Week-over-Week Stats]</p>
                   </div>
                </div>
                <div class="card dash-card">
                   <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Device Breakdown</h3>
-                  <div style="width: 100%; height: 150px; background: rgba(16, 185, 129, 0.05); border: 1px dashed #10B981; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
+                  <div
+                     style="width: 100%; height: 150px; background: rgba(16, 185, 129, 0.05); border: 1px dashed #10B981; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;">
                      <p style="color: var(--text-muted); font-size: 0.8rem;">[Appliance Usage List]</p>
                   </div>
                </div>
             </div>
-            
+
             <div class="secondary-grid">
                <div class="card dash-card">
                   <h3 style="margin-bottom: 1rem;">Environmental Impact</h3>
                   <div class="flex" style="gap: 2rem; justify-content: space-around; width: 100%;">
                      <div style="text-align: center;">
-                        <div style="color: #10B981; font-size: 1.5rem; margin-bottom: 0.5rem;"><i data-lucide="trees"></i></div>
+                        <div style="color: #10B981; font-size: 1.5rem; margin-bottom: 0.5rem;"><i
+                              data-lucide="trees"></i></div>
                         <p style="font-weight: 800; font-size: 1.2rem;">42</p>
                         <p style="font-size: 0.7rem; color: var(--text-muted);">Trees Planted</p>
                      </div>
                      <div style="text-align: center;">
-                        <div style="color: #3B82F1; font-size: 1.5rem; margin-bottom: 0.5rem;"><i data-lucide="cloud"></i></div>
+                        <div style="color: #3B82F1; font-size: 1.5rem; margin-bottom: 0.5rem;"><i
+                              data-lucide="cloud"></i></div>
                         <p style="font-weight: 800; font-size: 1.2rem;">1.2t</p>
                         <p style="font-size: 0.7rem; color: var(--text-muted);">Carbon Reduced</p>
                      </div>
@@ -240,7 +272,8 @@
                </div>
                <div class="card dash-card">
                   <h3 style="margin-bottom: 1rem;">Peak Hour Analysis</h3>
-                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Most power generated between 11 AM - 3 PM.</p>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">Most power generated
+                     between 11 AM - 3 PM.</p>
                   <div style="height: 10px; background: #E2E8F0; border-radius: 5px; overflow: hidden; width: 100%;">
                      <div style="width: 75%; height: 100%; background: #FACC15;"></div>
                   </div>
@@ -305,11 +338,13 @@
                <div class="card dash-card" style="flex: 1;">
                   <h3 style="margin-bottom: 1.5rem;">Project Roadmap</h3>
                   <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
+                     <div
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
                         <p style="font-weight: 600; font-size: 0.85rem;">Phase 1: Permitting</p>
                         <p style="font-size: 0.75rem; color: #10B981;">Done (March 15)</p>
                      </div>
-                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
+                     <div
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem;">
                         <p style="font-weight: 600; font-size: 0.85rem;">Phase 2: Hardware Delivery</p>
                         <p style="font-size: 0.75rem; color: #10B981;">Done (March 22)</p>
                      </div>
@@ -318,22 +353,26 @@
                <div class="card dash-card" style="flex: 1;">
                   <h3 style="margin-bottom: 1.5rem;">Technical Specs</h3>
                   <ul style="width: 100%; display: flex; flex-direction: column; gap: 0.5rem; text-align: start;">
-                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);"><strong>Panels:</strong> 24x Q-CELL 400W</li>
-                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);"><strong>Inverter:</strong> SolarEdge SE7600H</li>
+                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
+                        <strong>Panels:</strong> 24x Q-CELL 400W</li>
+                     <li style="font-size: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border);">
+                        <strong>Inverter:</strong> SolarEdge SE7600H</li>
                      <li style="font-size: 0.85rem;"><strong>Battery:</strong> LG Resu 10 Prime</li>
                   </ul>
                </div>
                <div class="card dash-card" style="flex: 1;">
                   <h3 style="margin-bottom: 1.5rem;">System Maintenance</h3>
                   <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-                     <div style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                     <div
+                        style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
                         <i data-lucide="calendar" style="color: var(--primary);"></i>
                         <div>
                            <p style="font-size: 0.8rem; font-weight: 700;">Panel Cleaning</p>
                            <p style="font-size: 0.7rem; color: var(--text-muted);">Due in 15 days (April 18)</p>
                         </div>
                      </div>
-                     <div style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
+                     <div
+                        style="padding: 0.75rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); display: flex; align-items: center; gap: 1rem;">
                         <i data-lucide="check-circle" style="color: #10B981;"></i>
                         <div>
                            <p style="font-size: 0.8rem; font-weight: 700;">Inverter Check</p>
@@ -344,8 +383,10 @@
                </div>
                <div class="card dash-card" style="flex: 1;">
                   <h3 style="margin-bottom: 1.5rem;">Warranties</h3>
-                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Performance:</strong> 25 Year Limited</p>
-                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Hardware:</strong> 12 Year Manufacturer</p>
+                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Performance:</strong> 25
+                     Year Limited</p>
+                  <p style="font-size: 0.8rem; line-height: 1.6; margin-bottom: 1rem;"><strong>Hardware:</strong> 12
+                     Year Manufacturer</p>
                   <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Request Service</button>
                </div>
             </div>
@@ -357,14 +398,16 @@
                <div class="card dash-card" style="flex: 2;">
                   <h3 style="margin-bottom: 1.5rem;">Inbox</h3>
                   <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between;">
+                     <div
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between;">
                         <div>
                            <p style="font-weight: 600; font-size: 0.85rem;">Technical Support</p>
                            <p style="font-size: 0.75rem; color: var(--text-muted);">How's the noise level?</p>
                         </div>
                         <span style="font-size: 0.7rem; color: var(--text-muted);">2h ago</span>
                      </div>
-                     <div style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between; border-left: 4px solid var(--primary);">
+                     <div
+                        style="padding: 1rem; background: var(--background); border: 1px solid var(--border); border-radius: 0.5rem; display: flex; justify-content: space-between; border-left: 4px solid var(--primary);">
                         <div>
                            <p style="font-weight: 600; font-size: 0.85rem;">Welcome Team</p>
                            <p style="font-size: 0.75rem; color: var(--text-muted);">Welcome to SolarWave, Michael!</p>
@@ -376,7 +419,8 @@
                <div class="card dash-card">
                   <h3 style="margin-bottom: 1.5rem;">Archived</h3>
                   <div style="display: flex; flex-direction: column; gap: 0.5rem; width: 100%;">
-                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; padding: 2rem;">No archived messages.</p>
+                     <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; padding: 2rem;">No
+                        archived messages.</p>
                   </div>
                </div>
             </div>
@@ -391,27 +435,35 @@
                </div>
                <div class="card dash-card">
                   <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">System Alerts</h3>
-                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Configure Notifications</button>
+                  <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Configure
+                     Notifications</button>
                </div>
                <div class="card dash-card">
                   <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">Security</h3>
                   <button class="btn btn-outline" style="width: 100%; font-size: 0.8rem;">Change Password</button>
                </div>
             </div>
-            
+
             <div class="card dash-card" style="margin-top: 2rem;">
                <h3 style="margin-bottom: 1.5rem;">Notification Preferences</h3>
                <div style="display: flex; flex-direction: column; gap: 1rem; width: 100%;">
-                  <div class="flex" style="justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
+                  <div class="flex"
+                     style="justify-content: space-between; border-bottom: 1px solid var(--border); padding-bottom: 0.75rem;">
                      <p style="font-size: 0.9rem;">Email Alerts for Yield Drops</p>
-                     <div style="width: 40px; height: 20px; background: var(--primary); border-radius: 10px; position: relative; cursor: pointer;">
-                        <div style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;"></div>
+                     <div
+                        style="width: 40px; height: 20px; background: var(--primary); border-radius: 10px; position: relative; cursor: pointer;">
+                        <div
+                           style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; right: 2px; top: 2px;">
+                        </div>
                      </div>
                   </div>
                   <div class="flex" style="justify-content: space-between;">
                      <p style="font-size: 0.9rem;">SMS for Maintenance Reminder</p>
-                     <div style="width: 40px; height: 20px; background: #CBD5E1; border-radius: 10px; position: relative; cursor: pointer;">
-                        <div style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; left: 2px; top: 2px;"></div>
+                     <div
+                        style="width: 40px; height: 20px; background: #CBD5E1; border-radius: 10px; position: relative; cursor: pointer;">
+                        <div
+                           style="width: 16px; height: 16px; background: white; border-radius: 50%; position: absolute; left: 2px; top: 2px;">
+                        </div>
                      </div>
                   </div>
                </div>
@@ -432,7 +484,8 @@
       }
 
       .dashboard-layout {
-         display: block !important; /* Disabling conflicting grid */
+         display: block !important;
+         /* Disabling conflicting grid */
          width: 100%;
          overflow-x: hidden;
       }
@@ -442,7 +495,8 @@
          margin-inline-start: 280px !important;
          width: calc(100% - 280px) !important;
          min-height: 100vh;
-         padding: 2.5rem 4rem !important; /* Generous padding for alignment */
+         padding: 6.5rem 4rem 2.5rem !important;
+         /* Adjusted for fixed header height (approx 80px) */
          box-sizing: border-box !important;
          background-color: transparent;
       }
@@ -462,11 +516,11 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex !important;
             flex-direction: column;
-            box-shadow: 10px 0 30px rgba(0,0,0,0.1);
+            box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
          }
 
          [dir="rtl"] .sidebar {
-            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
          }
 
          .sidebar.open {
@@ -494,7 +548,13 @@
             margin-right: 0 !important;
             width: 100% !important;
             padding: 1.5rem !important;
-            padding-top: 5rem !important;
+            padding-top: 6.5rem !important;
+         }
+
+         .dashboard-header {
+            width: 100% !important;
+            padding-inline: 1.5rem !important;
+            height: 70px !important;
          }
 
          .sidebar-toggle {
@@ -508,11 +568,8 @@
             border-radius: 0.75rem;
             color: var(--text-main);
             cursor: pointer;
-            position: absolute;
-            top: 1.25rem;
-            inset-inline-start: 1.5rem;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transition: all 0.2s ease;
          }
 
@@ -541,7 +598,8 @@
          align-items: stretch !important;
          flex-direction: row !important;
          width: 100% !important;
-         max-width: 1100px !important; /* Centered contained width */
+         max-width: 1100px !important;
+         /* Centered contained width */
          margin-left: auto !important;
          margin-right: auto !important;
          justify-content: center !important;
@@ -550,6 +608,7 @@
 
       /* Desktop & Laptop Grid alignment */
       @media (min-width: 1025px) {
+
          .dash-grid,
          .secondary-grid {
             flex-wrap: wrap !important;
@@ -612,17 +671,21 @@
                padding: 1rem !important;
                padding-top: 4.5rem !important;
             }
+
             .dash-card {
                padding: 1rem !important;
             }
+
             .dash-card h3 {
                font-size: 1.1rem !important;
             }
+
             table {
                font-size: 0.8rem !important;
             }
          }
       }
+
       .tab-content {
          display: none;
          animation: fadeIn 0.4s ease;
@@ -643,17 +706,66 @@
             transform: translateY(0);
          }
       }
+
+      .dashboard-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 1.25rem 4rem;
+         height: 80px;
+         width: calc(100% - 280px);
+         position: fixed;
+         top: 0;
+         inset-inline-end: 0;
+         z-index: 1000;
+         background: rgba(241, 245, 249, 0.85);
+         backdrop-filter: blur(12px);
+         border-bottom: 2px solid var(--border);
+         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+         box-sizing: border-box;
+      }
+
+      [data-theme="dark"] .dashboard-header {
+         background: rgba(15, 23, 42, 0.85);
+      }
+
+      .dashboard-header.scrolled {
+         background: rgba(241, 245, 249, 0.95);
+         padding: 1rem 4rem;
+         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .header-controls {
+         display: flex;
+         gap: 1rem;
+         margin-inline-start: auto;
+      }
+
+      .dashboard-header .toggle-btn {
+         background: var(--surface);
+         color: var(--text-main);
+         border: 1px solid var(--border);
+         border-radius: 0.75rem;
+         width: 44px;
+         height: 44px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer;
+         box-shadow: var(--shadow);
+         transition: var(--transition);
+      }
+
+      .dashboard-header .toggle-btn:hover {
+         background: var(--primary);
+         color: var(--secondary);
+         border-color: var(--primary);
+         transform: translateY(-2px);
+         box-shadow: var(--shadow-lg);
+      }
    </style>
 
-   <div class="dashboard-fixed-controls"
-      style="position: fixed; top: 2rem; inset-inline-end: 2rem; display: flex; gap: 1rem; z-index: 9999;">
-      <button id="dark-mode-toggle" class="toggle-btn"
-         style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border); border-radius: 0.75rem; width: 44px; height: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><i
-            data-lucide="moon"></i></button>
-      <button id="rtl-toggle" class="toggle-btn"
-         style="background: var(--surface); color: var(--text-main); border: 1px solid var(--border); border-radius: 0.75rem; width: 44px; height: 44px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"><i
-            data-lucide="languages"></i></button>
-   </div>
+
 
    <script>
       lucide.createIcons();
@@ -699,10 +811,10 @@
       darkModeToggle.addEventListener('click', () => {
          const currentTheme = htmlElement.getAttribute('data-theme');
          const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-         
+
          htmlElement.setAttribute('data-theme', newTheme);
          localStorage.setItem('theme', newTheme);
-         
+
          // Update icon if needed
          const icon = darkModeToggle.querySelector('i');
          if (newTheme === 'dark') {
@@ -725,7 +837,7 @@
       const sidebarToggle = document.getElementById('sidebar-toggle');
       const sidebar = document.querySelector('.sidebar');
       const dashboardLayout = document.querySelector('.dashboard-layout');
-      
+
       // Create Overlay
       const overlay = document.createElement('div');
       overlay.className = 'sidebar-overlay';
@@ -747,6 +859,15 @@
                toggleSidebar();
             }
          });
+      });
+      // Header Scroll Effect
+      const dashHeader = document.querySelector('.dashboard-header');
+      window.addEventListener('scroll', () => {
+         if (window.scrollY > 20) {
+            dashHeader.classList.add('scrolled');
+         } else {
+            dashHeader.classList.remove('scrolled');
+         }
       });
    </script>
 </body>

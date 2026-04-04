@@ -10,6 +10,24 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    .contact-social-links .social-link {
+      background-color: var(--surface);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      width: 44px;
+      height: 44px;
+      font-size: 20px;
+    }
+
+    .contact-social-links .social-link:hover {
+      background-color: var(--primary);
+      color: var(--secondary) !important;
+      border-color: var(--primary);
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 10px 15px -3px rgba(250, 204, 21, 0.3);
+    }
+  </style>
 </head>
 
 <body>
@@ -104,27 +122,29 @@
               <p style="color: var(--text-muted);">United States</p>
             </div>
           </div>
+          <div style="margin-top: 1rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+            <h4 style="margin-bottom: 1.25rem;">Follow Us</h4>
+            <div class="social-links contact-social-links" style="gap: 1.25rem;">
+              <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card">
         <h3 style="margin-bottom: 2rem;">Send us a <span>Message</span></h3>
-        <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="grid contact-form-row">
-            <div>
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
-              <input type="text" placeholder="John Doe"
-                style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);">
-            </div>
-            <div>
-              <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
-              <input type="email" placeholder="john@example.com"
-                style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);">
-            </div>
+        <form style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; text-align: left;">
+          <div>
+            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+            <input type="email" placeholder="john@example.com"
+              style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);">
           </div>
           <div>
             <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Subject</label>
             <select
-              style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);">
+              style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background); color: var(--text-main);">
               <option>Residential Quote</option>
               <option>Solar Maintenance</option>
               <option>Battery Storage Info</option>

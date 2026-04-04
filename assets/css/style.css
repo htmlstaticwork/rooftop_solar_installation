@@ -70,14 +70,31 @@ html {
   font-size: 16px;
 }
 
+html,
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--background);
   color: var(--text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
   transition: background-color 0.3s ease;
 }
+
+section {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+
+  
+  
+  
+  
+  
+  
+
 
 h1,
 h2,
@@ -245,6 +262,18 @@ textarea {
 }
 
 .departments-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.departments-grid>div {
+  width: 100%;
+}
+
+.departments-grid-new {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -257,7 +286,7 @@ textarea {
 
 @media (min-width: 992px) {
   .departments-grid {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 }
@@ -278,8 +307,17 @@ textarea {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .solar-potential-grid .card {
+    flex: 0 0 calc(50% - 1rem) !important;
+    max-width: calc(50% - 1rem) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .solar-potential-grid .card,
+  .switching-solar-grid>div,
+  .departments-grid>div {
     flex-basis: 100% !important;
     max-width: 100% !important;
   }
@@ -294,6 +332,12 @@ textarea {
   justify-self: center;
   max-width: 580px;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .installation-process-grid .card:last-child {
+    max-width: calc(50% - 1rem);
+  }
 }
 
 @media (max-width: 580px) {
@@ -603,6 +647,19 @@ textarea {
   box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
 }
 
+.btn-outline-white {
+  border-color: var(--white) !important;
+  color: var(--white) !important;
+}
+
+.btn-outline-white:hover {
+  background-color: var(--white) !important;
+  color: var(--secondary) !important;
+  border-color: var(--white) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
 /* Navbar */
 .header {
   position: fixed;
@@ -664,11 +721,15 @@ textarea {
   border: none;
   color: var(--text-main);
   cursor: pointer;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav-actions .toggle-btn {
+  display: none;
 }
 
 .toggle-btn svg {
@@ -938,7 +999,7 @@ textarea {
 /* --- Responsive Styles --- */
 
 .mobile-toggle-item {
-  display: none;
+  display: flex;
 }
 
 @media (max-width: 1024px) {
@@ -970,7 +1031,7 @@ textarea {
   }
 
   .nav-actions .toggle-btn {
-    display: none;
+    display: flex;
   }
 
   .mobile-toggle-item {
@@ -993,7 +1054,7 @@ textarea {
   }
 
   .hero-image {
-    display: none;
+    display: flex;
   }
 
   .hero-btns {
@@ -1165,7 +1226,21 @@ textarea {
   margin-top: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.sidebar-logout:hover {
+  background-color: transparent !important;
+  color: #F87171 !important;
+  transform: translateX(8px);
+  box-shadow: none !important;
+}
+
+
+  
+  
+  
+
 
 /* 3D Floating Animations */
 .floating-card {
@@ -1484,7 +1559,7 @@ textarea {
 /* Standardizing Pricing Header Size to Match About Page */
 .pricing-hero {
   min-height: unset !important;
-  padding: 10rem 0 6rem !important;
+  padding: 12.5rem 0 10.5rem !important;
 }
 
 @media (max-width: 1024px) {
@@ -1548,3 +1623,33 @@ textarea {
   }
 }
 
+
+@media (max-width: 768px) {
+  .contact-container > div:first-child {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-container > div:first-child > div {
+    align-items: center;
+  }
+  .contact-container > div:first-child .flex {
+    flex-direction: column;
+    align-items: center !important;
+    text-align: center;
+  }
+}
+
+/* Fix for Specialized Departments Section (Contact Page) */
+@media (max-width: 1024px) {
+  .departments-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 600px !important;
+    margin: 0 auto;
+  }
+  .departments-grid>div {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}

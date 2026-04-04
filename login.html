@@ -9,19 +9,44 @@
   <title>Login | SolarWave</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://unpkg.com/lucide@latest"></script>
+<style>
+    .utility-toggles {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: flex-end;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .utility-toggles {
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+        width: auto;
+        max-width: none;
+        margin-bottom: 0;
+      }
+    }
+  </style>
 </head>
 
 <body
-  style="background-color: var(--surface); display: flex; align-items: center; justify-content: center; min-height: 100vh; position: relative;">
+  style="background-color: var(--surface); display: flex; flex-direction: column; align-items: center; min-height: 100vh; position: relative; padding: 2.5rem 1rem;">
 
   <!-- Utility Toggles Top Right -->
-  <div style="position: absolute; top: 2rem; right: 2rem; display: flex; gap: 1rem;">
-    <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode"><i data-lucide="moon"></i></button>
-    <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL"><i data-lucide="languages"></i></button>
+  <div class="utility-toggles">
+    <button id="dark-mode-toggle" class="toggle-btn dark-mode-toggle" title="Toggle Dark Mode">
+      <i data-lucide="moon"></i>
+    </button>
+    <button id="rtl-toggle" class="toggle-btn rtl-toggle" title="Toggle RTL">
+      <i data-lucide="languages"></i>
+    </button>
   </div>
 
   <div class="card"
-    style="width: 100%; max-width: 400px; padding: 2.25rem; background: var(--background); box-shadow: var(--shadow-lg); border-radius: 1.5rem;">
+    style="width: 100%; max-width: 400px; padding: 2.25rem; background: var(--background); box-shadow: var(--shadow-lg); border-radius: 1.5rem; margin: auto;">
     <div style="text-align: center; margin-bottom: 1.5rem;">
       <a href="index.html" class="logo" style="justify-content: center; font-size: 1.75rem;">
         <i data-lucide="sun" style="color: var(--primary);"></i>
