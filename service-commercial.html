@@ -30,15 +30,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -53,7 +61,7 @@
   <!-- Section 1: Commercial Overview -->
   <section class="section-padding" style="padding-top: 10rem;">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center;">
+      <div class="section-overview-grid">
         <div>
           <img src="assets/images/service-commercial.png" alt="Commercial Solar" style="border-radius: 2rem; box-shadow: var(--shadow-lg);">
         </div>
@@ -78,7 +86,7 @@
       <div class="text-center" style="margin-bottom: 4rem;">
         <h2 style="font-size: 2.5rem;">The Commercial <span>Installation Journey</span></h2>
       </div>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem;">
+      <div class="grid installation-process-grid" style="gap: 2rem;">
         <!-- Step 1 -->
         <div class="card" style="align-items: flex-start; text-align: left;">
           <div style="width: 40px; height: 40px; background: var(--primary); color: var(--secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; margin-bottom: 1.5rem;">1</div>
@@ -163,13 +171,13 @@
   <!-- Section 4: Enterprise ROI -->
   <section class="section-padding" style="background-color: var(--secondary); color: white;">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+      <div class="savings-container-grid">
         <div>
           <img src="assets/images/commercial-detail-savings.png" alt="Enterprise Savings" style="border-radius: 2rem; filter: brightness(0.9);">
         </div>
         <div>
           <h2 style="font-size: 2.5rem; margin-bottom: 3rem; color: white;">ROI and <span>Business Savings</span></h2>
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+          <div class="savings-cards-grid">
             <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(255,255,255,0.1);">
               <h3 style="color: var(--primary); font-size: 1.5rem; margin-bottom: 0.5rem;">MACRS</h3>
               <p style="font-size: 0.9rem; color: #94A3B8;">Accelerated depreciation benefits for tax optimization.</p>
@@ -195,10 +203,10 @@
   <!-- Section 5: Enterprise Benefits + CTA -->
   <section class="section-padding">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center;">
+      <div class="section-benefits-grid">
         <div>
           <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Future-Proof <span>Your Asset</span></h2>
-          <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem;">
+          <div class="benefits-list-grid">
             <div class="flex" style="align-items: flex-start;">
               <i data-lucide="check-circle" style="color: var(--primary); flex-shrink: 0;"></i>
               <p>Predictable long-term energy expenditures</p>
@@ -216,7 +224,7 @@
               <p>30-year operational life with minimal overhead</p>
             </div>
           </div>
-          <div class="flex" style="gap: 1.5rem;">
+          <div class="cta-button-group">
             <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Request Enterprise Quote</a>
             <a href="pricing.html" class="btn btn-outline" style="padding: 1rem 2.5rem;">View Commercial Plans</a>
           </div>

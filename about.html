@@ -30,15 +30,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -51,34 +59,34 @@
   </header>
 
   <!-- Section 1: Page Hero -->
-  <section class="section-padding about-hero-section" style="color: white; padding: 12rem 0;">
+  <section class="section-padding about-hero-section">
     <div class="container text-center">
-      <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Empowering Your <span>Home</span></h1>
-      <p style="max-width: 700px; margin: 0 auto; opacity: 0.8;">Founded in 2010, SolarWave has been at the forefront of
+      <h1 class="about-hero-title">Empowering Your <span>Home</span></h1>
+      <p class="about-hero-subtitle">Founded in 2010, SolarWave has been at the forefront of
         the solar energy revolution, helping over 50,000 families transition to a cleaner future.</p>
     </div>
   </section>
 
   <!-- Section 2: Mission & Vision -->
-  <section class="section-padding">
-    <div class="container grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
-      <div>
+   <section class="section-padding">
+    <div class="container grid mission-grid">
+      <div class="mission-content">
         <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Our Mission to <span>Decarbonize</span></h2>
         <p style="color: var(--text-muted); margin-bottom: 1.5rem;">We believe that energy independence is a human
           right. Our mission is to make solar technology affordable, accessible, and aesthetically pleasing for every
           household.</p>
-        <div class="flex" style="gap: 1.5rem; margin-top: 2rem;">
-          <div style="text-align: center; background: var(--surface); padding: 1.5rem; border-radius: 1rem; flex: 1;">
+        <div class="flex mission-stats">
+          <div class="stat-item">
             <h3 style="color: var(--primary);">2010</h3>
             <p style="font-size: 0.8rem;">Year Founded</p>
           </div>
-          <div style="text-align: center; background: var(--surface); padding: 1.5rem; border-radius: 1rem; flex: 1;">
+          <div class="stat-item">
             <h3 style="color: var(--primary);">100%</h3>
             <p style="font-size: 0.8rem;">Integrity</p>
           </div>
         </div>
       </div>
-      <div>
+      <div class="mission-image">
         <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
           alt="Meeting" style="border-radius: 1.5rem;">
       </div>

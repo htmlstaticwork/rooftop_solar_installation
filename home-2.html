@@ -39,12 +39,118 @@
       align-items: center;
     }
 
+    .energy-security-grid {
+      grid-template-areas: 
+        "header image"
+        "features image";
+      align-items: start;
+    }
+
+    .energy-header { grid-area: header; }
+    .energy-features { grid-area: features; }
+    .energy-image { grid-area: image; }
+
+    .monitoring-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      max-width: 1000px;
+      margin: 0 auto;
+      gap: 3rem;
+    }
+
+    .app-preview-image {
+      max-width: 600px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 1rem;
+      box-shadow: var(--shadow-lg);
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .premium-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .energy-security-grid {
+        grid-template-areas: 
+          "header"
+          "image"
+          "features";
+      }
+
+      .monitoring-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .app-preview-image {
+        width: 100%;
+        margin-top: 2rem !important;
+      }
+
+      .energy-image img {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .section-padding {
+        padding: 3rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .premium-grid {
+        gap: 2rem;
+      }
+      
+      .energy-image img {
+        max-width: 100%;
+      }
+
+      .hero-premium {
+        padding: 8rem 1rem 4rem 1rem;
+        height: auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .hero-title-premium {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 1.5rem !important;
+      }
+
+      .hero-subtitle-premium {
+        font-size: 1rem !important;
+        margin-bottom: 2rem !important;
+        line-height: 1.5 !important;
+      }
+
+      .hero-buttons-premium {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem !important;
+      }
+
+      .hero-buttons-premium .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 0.8rem 2rem !important;
+      }
+    }
+
     .feature-item {
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       padding: 1.5rem;
       border-radius: 1rem;
       background: var(--surface);
       border-left: 4px solid var(--primary);
+      transition: var(--transition);
     }
   </style>
 </head>
@@ -67,15 +173,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -90,11 +204,11 @@
   <!-- Premium Hero -->
   <section class="hero-premium">
     <div class="container">
-      <h1 style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1;">The Ultimate <span>Solar Experience</span>
+      <h1 class="hero-title-premium" style="font-size: 4rem; margin-bottom: 1.5rem; line-height: 1.1;">The Ultimate <span>Solar Experience</span>
       </h1>
-      <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9;">Luxury meets sustainability. Transform your
+      <p class="hero-subtitle-premium" style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9;">Luxury meets sustainability. Transform your
         home into a self-sustaining power plant with premium hardware and white-glove service.</p>
-      <div class="flex" style="justify-content: center; gap: 1.5rem;">
+      <div class="flex hero-buttons-premium" style="justify-content: center; gap: 1.5rem;">
         <a href="contact.html" class="btn btn-primary" style="padding: 1rem 2.5rem;">Begin Your Journey</a>
         <a href="#features" class="btn btn-outline"
           style="color: white; border-color: white; padding: 1rem 2.5rem;">Learn More</a>
@@ -104,11 +218,13 @@
 
   <!-- Section 1: 24/7 Energy Security (Battery Backup) -->
   <section id="features" class="section-padding">
-    <div class="container premium-grid">
-      <div>
+    <div class="container premium-grid energy-security-grid">
+      <div class="energy-header">
         <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">24/7 Energy <span>Security</span></h2>
         <p style="color: var(--text-muted); margin-bottom: 2rem;">Never worry about blackouts again. Our smart battery
           backup systems capture excess solar energy during the day to power your home all night long.</p>
+      </div>
+      <div class="energy-features">
         <div class="feature-item">
           <h4>Intelligent Backup</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Detects grid outages instantly and seamlessly
@@ -120,7 +236,7 @@
             detected in your area.</p>
         </div>
       </div>
-      <div>
+      <div class="energy-image">
         <img src="assets/images/battery-1.png" alt="Smart Battery"
           style="border-radius: 2rem; box-shadow: var(--shadow-lg);">
       </div>
@@ -134,7 +250,7 @@
         <h2 style="font-size: 2.5rem;">Monitor from <span>Anywhere</span></h2>
         <p style="color: var(--text-muted);">Our industry-leading mobile app puts the control in your hands.</p>
       </div>
-      <div class="grid" style="grid-template-columns: repeat(2, 1fr); max-width: 1000px; margin: 0 auto; gap: 3rem;">
+      <div class="monitoring-grid">
         <div class="text-center" style="padding: 2rem; background: var(--background); border-radius: 1.5rem; border: 1px solid var(--border); transition: var(--transition);">
           <i data-lucide="smartphone"
             style="width: 48px; height: 48px; color: var(--primary); margin-bottom: 1.5rem;"></i>
@@ -165,8 +281,7 @@
         </div>
       </div>
       <div style="margin-top: 4rem; text-align: center;">
-        <img src="assets/images/service-3.png" alt="App Preview"
-          style="max-width: 600px; margin: 0 auto; border-radius: 1rem; box-shadow: var(--shadow-lg);">
+        <img src="assets/images/service-3.png" alt="App Preview" class="app-preview-image">
       </div>
     </div>
   </section>
@@ -208,7 +323,7 @@
   <section class="section-padding" style="background-color: var(--secondary); color: white;">
     <div class="container text-center">
       <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Affordable <span>Ownership</span></h2>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
         <div class="card"
           style="background: rgba(255,255,255,0.05); color: white; border-color: rgba(255,255,255,0.1);">
           <h3>$0 Down Financing</h3>

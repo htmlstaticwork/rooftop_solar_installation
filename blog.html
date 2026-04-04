@@ -30,15 +30,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -61,9 +69,9 @@
 
   <section class="section-padding">
     <div class="container">
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+      <div class="blog-grid-main">
         <!-- Post 1 -->
-        <article class="card" style="flex: 1 1 350px; max-width: 400px;">
+        <article class="card">
           <img src="assets/images/Top 5 Solar.png"
             alt="Solar Post" class="card-img">
           <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">TECH NEWS |
@@ -74,7 +82,7 @@
           <a href="blog-details.html?post=top-5-tech" class="btn btn-outline">Read Full Article</a>
         </article>
         <!-- Post 2 -->
-        <article class="card" style="flex: 1 1 350px; max-width: 400px;">
+        <article class="card">
           <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800"
             alt="Solar Post" class="card-img">
           <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">TIPS | FEB 2026
@@ -85,7 +93,7 @@
           <a href="blog-details.html?post=winter-efficiency" class="btn btn-outline">Read Full Article</a>
         </article>
         <!-- Post 3 -->
-        <article class="card" style="flex: 1 1 350px; max-width: 400px;">
+        <article class="card">
           <img src="assets/images/How to Sell Back Energy.png"
             alt="Solar Post" class="card-img">
           <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">SAVINGS | JAN
@@ -96,7 +104,7 @@
           <a href="blog-details.html?post=net-metering" class="btn btn-outline">Read Full Article</a>
         </article>
         <!-- Post 4 -->
-        <article class="card" style="flex: 1 1 350px; max-width: 400px;">
+        <article class="card">
           <img src="assets/images/Solar Batteries vs. Generators.png"
             alt="Solar Post" class="card-img">
           <p style="font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">GUIDE | DEC 2025
@@ -114,10 +122,9 @@
     <div class="container text-center">
       <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Join Our <span>Newsletter</span></h2>
       <p style="margin-bottom: 2.5rem; opacity: 0.8;">Get the latest solar tips and news delivered to your inbox.</p>
-      <div class="flex" style="justify-content: center; gap: 1rem; max-width: 500px; margin: 0 auto;">
-        <input type="email" placeholder="Your Email Address"
-          style="padding: 1rem; border-radius: 0.5rem; border: none; flex: 1;">
-        <button class="btn btn-primary" style="padding: 1rem 2rem;">Subscribe</button>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your Email Address">
+        <button class="btn btn-primary">Subscribe</button>
       </div>
     </div>
   </section>
@@ -125,7 +132,7 @@
   <section class="section-padding" style="background-color: var(--surface);">
     <div class="container text-center">
       <h2 style="font-size: 2.5rem; margin-bottom: 3rem;">Why the World is <span>Switching to Solar</span></h2>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+      <div class="grid switching-solar-grid">
         <div class="card" style="border: none; background: white; padding: 3rem 2rem;">
           <div style="background: rgba(250, 204, 21, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
             <i data-lucide="leaf" style="width: 40px; height: 40px; color: var(--primary);"></i>

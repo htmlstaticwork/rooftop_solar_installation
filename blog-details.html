@@ -30,15 +30,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -80,7 +88,7 @@
     <div class="container" style="max-width: 800px;">
       <h2 style="font-size: 2rem; margin-bottom: 2rem;">Add a <span>Comment</span></h2>
       <form style="display: flex; flex-direction: column; gap: 1rem;">
-        <div class="flex" style="gap: 1rem;">
+        <div class="form-row">
           <input type="text" placeholder="Your Name"
             style="padding: 1rem; border-radius: 0.5rem; border: 1px solid var(--border); flex: 1; background: var(--background);">
           <input type="email" placeholder="Your Email"

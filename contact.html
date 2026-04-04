@@ -30,15 +30,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link active">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -59,7 +67,7 @@
   </section>
 
   <section class="section-padding">
-    <div class="container grid" style="grid-template-columns: 1fr 1.5fr; gap: 4rem;">
+    <div class="container grid contact-container">
       <div>
         <h2 style="font-size: 2rem; margin-bottom: 2rem;">Contact <span>Information</span></h2>
         <div style="display: flex; flex-direction: column; gap: 2rem;">
@@ -101,7 +109,7 @@
       <div class="card">
         <h3 style="margin-bottom: 2rem;">Send us a <span>Message</span></h3>
         <form style="display: flex; flex-direction: column; gap: 1.5rem;">
-          <div class="grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="grid contact-form-row">
             <div>
               <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
               <input type="text" placeholder="John Doe"
@@ -128,7 +136,7 @@
             <textarea placeholder="How can we help you?"
               style="width: 100%; padding: 1rem; min-height: 150px; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--background);"></textarea>
           </div>
-          <button class="btn btn-primary" style="padding: 1rem 3rem; align-self: flex-start;">Send Message</button>
+          <button class="btn btn-primary" style="padding: 1rem 3rem; align-self: center;">Send Message</button>
         </form>
       </div>
     </div>
@@ -137,7 +145,7 @@
   <section class="section-padding" style="background: var(--surface);">
     <div class="container text-center">
       <h2 style="margin-bottom: 3rem;">Our Specialized <span style="color: var(--primary);">Departments</span></h2>
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+      <div class="grid departments-grid">
         <div class="card" style="padding: 3rem 2rem;">
           <div
             style="background: rgba(250, 204, 21, 0.1); width: 60px; height: 60px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--primary);">

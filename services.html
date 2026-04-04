@@ -31,15 +31,23 @@
         <li><a href="pricing.html" class="nav-link">Pricing</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
         <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+        <li class="mobile-toggle-item">
+          <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="rtl-toggle toggle-btn" title="Toggle RTL">
+            <i data-lucide="languages"></i>
+          </button>
+        </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
         <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
       </ul>
 
       <div class="nav-actions">
-        <button id="dark-mode-toggle" class="toggle-btn" title="Toggle Dark Mode">
+        <button class="dark-mode-toggle toggle-btn" title="Toggle Dark Mode">
           <i data-lucide="moon"></i>
         </button>
-        <button id="rtl-toggle" class="toggle-btn" title="Toggle RTL">
+        <button class="rtl-toggle toggle-btn" title="Toggle RTL">
           <i data-lucide="languages"></i>
         </button>
         <div class="hamburger" id="hamburger">
@@ -64,7 +72,7 @@
   <!-- Section 2: Services Grid -->
   <section class="section-padding">
     <div class="container">
-      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 3rem;">
+      <div class="grid services-main-grid">
         
         <!-- Rooftop Solar Installation (Featured) -->
         <div class="card" style="border: 2px solid var(--primary); box-shadow: var(--shadow-lg);">
@@ -171,33 +179,33 @@
         <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">We make going solar simple and stress-free with a streamlined 5-step journey to clean energy.</p>
       </div>
 
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 4rem 2rem;">
+      <div class="grid installation-process-grid" style="gap: 4rem 2rem;">
         
-        <div style="text-align: center; position: relative; flex: 1 1 500px; max-width: 580px;">
+        <div class="card" style="text-align: center; position: relative; background: var(--surface); border: 1px solid var(--border);">
           <div style="width: 80px; height: 80px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; border: 4px solid var(--primary);">01</div>
           <h4 style="margin-bottom: 0.75rem;">Consultation</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Free virtual or in-home consultation to assess your energy needs and savings potential.</p>
         </div>
 
-        <div style="text-align: center; position: relative; flex: 1 1 500px; max-width: 580px;">
+        <div class="card" style="text-align: center; position: relative; background: var(--surface); border: 1px solid var(--border);">
           <div style="width: 80px; height: 80px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; border: 4px solid var(--primary);">02</div>
           <h4 style="margin-bottom: 0.75rem;">Site Survey</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Our engineers conduct a technical audit of your roof structure and electrical system.</p>
         </div>
 
-        <div style="text-align: center; position: relative; flex: 1 1 500px; max-width: 580px;">
+        <div class="card" style="text-align: center; position: relative; background: var(--surface); border: 1px solid var(--border);">
           <div style="width: 80px; height: 80px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; border: 4px solid var(--primary);">03</div>
           <h4 style="margin-bottom: 0.75rem;">Engineering</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Custom system design and handling of all municipal permits and utility approvals.</p>
         </div>
 
-        <div style="text-align: center; position: relative; flex: 1 1 500px; max-width: 580px;">
+        <div class="card" style="text-align: center; position: relative; background: var(--surface); border: 1px solid var(--border);">
           <div style="width: 80px; height: 80px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; border: 4px solid var(--primary);">04</div>
           <h4 style="margin-bottom: 0.75rem;">Installation</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Expert installation by our certified crews, usually completed in just 1-2 days.</p>
         </div>
 
-        <div style="text-align: center; position: relative; flex: 1 1 500px; max-width: 580px;">
+        <div class="card" style="text-align: center; position: relative; background: var(--surface); border: 1px solid var(--border);">
           <div style="width: 80px; height: 80px; background: var(--secondary); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 1.5rem; font-weight: 800; border: 4px solid var(--primary);">05</div>
           <h4 style="margin-bottom: 0.75rem;">Activation</h4>
           <p style="font-size: 0.9rem; color: var(--text-muted);">Final inspection, utility interconnection, and turning on your system for clean power.</p>
@@ -206,16 +214,16 @@
       </div>
 
       <!-- Call to Action Card -->
-      <div style="margin-top: 5rem; background: var(--secondary); border-radius: 2rem; padding: 4rem; color: white; display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;">
+      <div class="service-cta-card">
+        <div class="service-cta-content">
           <h3 style="font-size: 2rem; margin-bottom: 1rem; color: white;">Ready to start your solar journey?</h3>
           <p style="opacity: 0.8; margin-bottom: 2rem;">Join over 5,000+ satisfied homeowners who have switched to clean, renewable energy with SolarWave.</p>
-          <div style="display: flex; gap: 1rem;">
+          <div class="cta-button-group">
             <a href="contact.html" class="btn btn-primary">Get Your Free Quote</a>
             <a href="pricing.html" class="btn btn-outline" style="border-color: white; color: white;">View Pricing</a>
           </div>
         </div>
-        <div style="display: flex; gap: 2rem; flex: 1; justify-content: flex-end; min-width: 300px;">
+        <div class="service-cta-stats">
             <div style="text-align: center;">
                 <h4 style="font-size: 2.5rem; color: var(--primary); margin-bottom: 0.5rem;">25+</h4>
                 <p style="font-size: 0.9rem; opacity: 0.7;">Years Warranty</p>
