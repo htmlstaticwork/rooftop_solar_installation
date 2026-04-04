@@ -46,8 +46,10 @@
 
 [data-theme="dark"] .header .btn-outline:hover {
   background-color: var(--primary);
-  border-color: var(--primary);
-  color: #000000 !important;
+  border-color: var(--primary) !important;
+  color: var(--secondary) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
 }
 
 /* RTL Support */
@@ -276,10 +278,10 @@ textarea {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .solar-potential-grid .card {
-    /* Preserve the 2-1 layout if requested, otherwise it stacks */
-    /* flex-basis: 100%;  -- Removed to allow centering logic */
+    flex-basis: 100% !important;
+    max-width: 100% !important;
   }
 }
 
@@ -572,8 +574,8 @@ textarea {
 
 .btn-primary:hover {
   background-color: var(--primary-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
 }
 
 .btn-secondary {
@@ -583,8 +585,8 @@ textarea {
 
 .btn-secondary:hover {
   background-color: var(--secondary-light);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(30, 41, 59, 0.2);
 }
 
 .btn-outline {
@@ -594,8 +596,11 @@ textarea {
 }
 
 .btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  background-color: var(--primary);
+  border-color: var(--primary) !important;
+  color: var(--secondary) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(250, 204, 21, 0.3);
 }
 
 /* Navbar */
@@ -1011,7 +1016,7 @@ textarea {
 
   .hero-btns,
   .hero-premium .flex,
-  .section-padding .flex[style*="justify-content: center"] {
+  .section-padding .flex[style*="justify-content: center"]:not(.rating-stars):not(.profile-header) {
     flex-direction: column !important;
     align-items: center !important;
     gap: 1.25rem !important;
@@ -1522,3 +1527,24 @@ textarea {
     padding: 0 1rem !important;
   }
 }
+
+
+@media (max-width: 480px) {
+  /* Ensure stars and profile info stay horizontal on all mobile viewports */
+  .rating-stars,
+  .profile-header {
+    flex-direction: row !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .rating-stars i,
+  .rating-stars svg {
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
