@@ -328,15 +328,15 @@ textarea {
 }
 
 .installation-process-grid .card:last-child {
-  grid-column: span 2;
+  grid-column: span 1;
   justify-self: center;
-  max-width: 580px;
+  max-width: 100%;
   width: 100%;
 }
 
 @media (max-width: 768px) {
   .installation-process-grid .card:last-child {
-    max-width: calc(50% - 1rem);
+    max-width: 100%;
   }
 }
 
@@ -1031,7 +1031,7 @@ textarea {
   }
 
   .nav-actions .toggle-btn {
-    display: flex;
+    display: none;
   }
 
   .mobile-toggle-item {
