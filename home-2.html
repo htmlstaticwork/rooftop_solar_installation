@@ -58,6 +58,13 @@
       gap: 3rem;
     }
 
+    @media (min-width: 1200px) {
+      .monitoring-grid {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 1280px;
+      }
+    }
+
     .app-preview-image {
       max-width: 600px;
       width: 100%;
@@ -211,11 +218,11 @@
             <i data-lucide="moon"></i>
           </button>
           <button class="rtl-toggle toggle-btn" title="Toggle RTL">
-            <i data-lucide="languages"></i>
+            <i data-lucide="arrow-right-left"></i>
           </button>
         </li>
         <li><a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Login</a></li>
-        <li><a href="register.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Signup</a></li>
+        
       </ul>
 
       <div class="nav-actions">
@@ -223,7 +230,7 @@
           <i data-lucide="moon"></i>
         </button>
         <button class="rtl-toggle toggle-btn" title="Toggle RTL">
-          <i data-lucide="languages"></i>
+          <i data-lucide="arrow-right-left"></i>
         </button>
         <div class="hamburger" id="hamburger">
           <span></span>
