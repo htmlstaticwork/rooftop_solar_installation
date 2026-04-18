@@ -30,15 +30,10 @@
       }
     }
 
-    #google-login,
-    #apple-login {
-      width: 145% !important;
-      gap: 1rem !important;
-    }
   </style>
 </head>
 
-<body
+<body class="register-page"
   style="background-color: var(--surface); display: flex; flex-direction: column; align-items: center; min-height: 100vh; position: relative; padding: 2rem 1rem;">
 
   <!-- Utility Toggles Top Right -->
@@ -86,6 +81,17 @@
           <input type="password" id="password" placeholder="••••••••"
             style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);">
           <button type="button" id="toggle-password"
+            style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
+            <i data-lucide="eye" size="18"></i>
+          </button>
+        </div>
+      </div>
+      <div>
+        <label style="display: block; margin-bottom: 0.25rem; font-weight: 600; font-size: 0.8rem;">Confirm Password</label>
+        <div style="position: relative;">
+          <input type="password" id="confirm-password" placeholder="••••••••"
+            style="width: 100%; padding: 0.75rem; border-radius: 0.5rem; border: 1px solid var(--border); background: var(--surface);">
+          <button type="button" id="toggle-confirm-password"
             style="position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: var(--text-muted);">
             <i data-lucide="eye" size="18"></i>
           </button>

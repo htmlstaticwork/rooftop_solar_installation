@@ -262,11 +262,22 @@
       <div class="text-center" style="margin-bottom: 3rem;">
         <h2 style="font-size: 2.5rem;">What Homeowners Say</h2>
       </div>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+      <div class="testimonials-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
         <style>
           .testimonial-card {
             flex: 1 1 330px;
             max-width: 400px;
+          }
+          @media (min-width: 1025px) {
+            .testimonials-row {
+              flex-wrap: nowrap;
+              align-items: stretch;
+            }
+            .testimonial-card {
+              flex: 1 1 0;
+              max-width: none;
+              min-width: 0;
+            }
           }
         </style>
         <div class="card testimonial-card" style="background-color: var(--surface);">
