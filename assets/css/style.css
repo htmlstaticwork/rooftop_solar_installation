@@ -216,34 +216,65 @@ textarea {
     }
 }
 
-.solar-potential-grid {
-    display: flex !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+@media (min-width: 1024px) {
+    .services-main-grid {
+        grid-template-columns: repeat(3, 1fr);
 
+    }
+}
+
+.solar-potential-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .solar-potential-grid {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 1fr;
+        gap: 2rem;
+    }
+    .solar-potential-grid .card {
+        width: 100%;
+        max-width: none;
+    }
+    .solar-potential-grid .card:last-child {
+        grid-column: span 2;
+        width: calc(50% - 1rem);
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .solar-potential-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+    .solar-potential-grid .card:last-child {
+        grid-column: span 1;
+        width: 100%;
+        margin: 0;
+    }
 }
 
 .solar-potential-grid .card {
     width: 100%;
-    max-width: 480px;
-    flex-grow: 1;
-    flex-basis: 45%;
-    /* Enforce 2-1 layout for 3 cards */
+    max-width: none;
+    height: 100%;
 }
 
 .switching-solar-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
 
 }
 
 .switching-solar-grid>div {
-    flex: 1 1 350px;
-    /* Allow growth but have a base for 3 per row */
-    max-width: 400px;
+    flex: 1 1 300px;
+    max-width: 380px;
 
 }
 
@@ -353,26 +384,24 @@ textarea {
 }
 
 @media (max-width: 1024px) {
-
-    .solar-potential-grid .card,
-    .switching-solar-grid>div,
-    .departments-grid>div {
+    .switching-solar-grid > div {
+        flex: 1 1 30%;
+    }
+    .departments-grid > div {
         flex: 1 1 45%;
         /* Force 2 per row */
     }
 }
 
-@media (max-width: 768px) {
-    .solar-potential-grid .card {
-        flex: 0 0 calc(50% - 1rem) !important;
-        max-width: calc(50% - 1rem) !important;
-
+@media (max-width: 992px) {
+    .switching-solar-grid > div {
+        flex: 0 1 45%;
     }
 }
 
+
 @media (max-width: 640px) {
 
-    .solar-potential-grid .card,
     .switching-solar-grid>div,
     .departments-grid>div {
         flex-basis: 100% !important;

@@ -594,11 +594,11 @@
       .dash-grid,
       .secondary-grid {
          display: flex !important;
-         gap: 28px !important;
+         gap: 24px !important;
          align-items: stretch !important;
          flex-direction: row !important;
          width: 100% !important;
-         max-width: 1100px !important;
+         max-width: 1400px !important;
          /* Centered contained width */
          margin-left: auto !important;
          margin-right: auto !important;
@@ -617,15 +617,16 @@
 
          .dash-grid>.card,
          .secondary-grid>.card {
-            flex: 0 0 calc(50% - 14px) !important;
-            min-width: 300px !important;
-            margin-bottom: 28px !important;
+            flex: 0 0 calc(50% - 12px) !important;
+            min-width: 200px !important;
+            margin-bottom: 24px !important;
          }
 
          /* Desktop Screens: 4-card row */
-         @media (min-width: 1200px) {
+         @media (min-width: 1100px) {
             .dash-grid>.card {
-               flex: 0 0 calc(25% - 21px) !important;
+               flex: 1 1 calc(25% - 18px) !important;
+               max-width: calc(25% - 18px) !important;
             }
          }
       }
